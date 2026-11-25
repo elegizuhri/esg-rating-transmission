@@ -1,43 +1,209 @@
-# Information Transmission in ESG Ratings — Replication
+# Replication package — *Information Transmission in ESG Ratings: Evidence from MSCI Controversies*
 
-Replication code for *Information Transmission in ESG Ratings: Evidence from MSCI Controversies* (Zuhri & Michelon).
+**Version 43 (this build).** This package reproduces **every test and robustness move** behind the current
+manuscript (`Information_transmission_EZGM_v2-1_pillars.docx`). It is self-contained except for the licensed
+raw data (MSCI, LSEG/CRSP, Compustat, CRSP Mutual Fund Holdings, GDELT), which you supply.
 
-The whole pipeline — data acquisition, cleaning, variable construction, and every table, figure, and result — runs from one Google Colab notebook.
+The paper traces where firm-specific adverse information is delayed, preserved, transformed, or attenuated
+as it moves through MSCI's rating architecture (controversy → key-issue Management deduction → WAKIS →
+Industry-Adjusted Score → 7 letter bands). Every folder below corresponds to one stage of that trace.
 
-📄 **Paper:** [add the SSRN / preprint / journal link here]
+> **Start here — `ESG_transmission_full_pipeline_Colab.ipynb`.** A single Google Colab notebook that
+> reconstructs the whole pipeline end to end in the order the data flows: **data acquisition** from all four
+> licensed sources (raw MSCI, GDELT 2.0, WRDS/CRSP+Compustat+MF-holdings, Refinitiv/LSEG), **cleaning &
+> matching** (point-in-time rule, ISIN↔ISSUERID, ultimate-parent keys), **variable construction** (all
+> panels), and **every table, figure, and result**. Every code block carries an explanatory note. The
+> notebook embeds the scripts from the folders below verbatim, so the two are kept in sync; run the notebook
+> for an annotated walk-through, or the folder scripts directly via `pipeline/run_all.sh`.
 
-This repository contains **code only** — not the manuscript. The paper is distributed separately at the link above.
+---
 
-## ▶️ Run it in Google Colab (one click)
+## 1. Folder guide
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/elegizuhri/esg-rating-transmission/blob/main/pipeline_colab.ipynb)
-
-> `https://colab.research.google.com/github/elegizuhri/esg-rating-transmission/blob/main/pipeline_colab.ipynb`
-
-Or, in Colab: **File → Open notebook → GitHub tab → paste the repo URL → open `pipeline_colab.ipynb`**.
-
-## What's inside
-
-| Path | What it is |
+| Folder | What it holds |
 |---|---|
-| `pipeline_colab.ipynb` | **Start here.** The full annotated pipeline, Section 0 → 4, every code cell commented. |
-| `replication/` | The individual analysis scripts the notebook embeds (run directly via `replication/pipeline/run_all.sh` if you prefer). |
-| `replication/docs/CONSTRUCTION_DOCUMENTATION.md` | Variable dictionary and the exact expected value for every table. |
-| `replication/F1_daily_CAR_61_125.py` | Daily four-factor CAR over [+61, +125] — the §7.2 reconciliation (needs the CRSP daily file). |
-| `requirements.txt` | Python dependencies (the notebook installs these for you in Colab). |
+| `pipeline/` | Core Python/duckdb scripts `00`–`10` that build the panels and reproduce the main tables, figures, and narrative statistics. Run order in `run_all.sh`. |
+| `robustness/` | Secondary analyses that back the robustness appendices: backfill/floor-date re-estimation, distance-to-threshold LPM and letter-category bunching, methodology-implied ΔWAKIS, and the section-number/summary rebuild. |
+| `external_clock/` | The GDELT external-clock pipeline: the full keyword dictionary, retrieval parameters, the automated per-controversy clock, placebo validation, the hand-check funnel, and representativeness/reweighting of the verified sample. |
+| `audit/` | The **hand-verified** lag and its downstream exhibits (the manuscript's reported clock and audited-date returns). This is the authoritative lag; `external_clock/` is the automated screen that feeds it. |
+| `consequences/` | Downstream real-effects tests: index-vs-other ESG fund flows, ownership linkage, logging lag, and abnormal volume/liquidity around downgrades. |
+| `stata/` | One `.do` per core test (`master.do` drives them), for reviewers who prefer Stata; assumes the Python-built panels exported to `.dta`. |
+| `latex/` | An **earlier-framing** LaTeX manuscript, kept for provenance only. The authoritative manuscript is the Word file above; where the two disagree, the Word file and this README govern. |
+| `docs/` | `CONSTRUCTION_DOCUMENTATION.md` (journal-standard record of every exhibit: source, sample, variable, equation, FE, SE, exact values), `EXTERNAL_CLOCK_PLAN.md`, and `EXTERNAL_CLOCK.md` (the as-run keyword method). |
+| `log/` | `REPRODUCTION_LOG.txt` — every coefficient, t-stat, and N in one place. |
+| `MANIFEST.md` | Full file listing with one-line descriptions and what is deliberately excluded. |
 
-## How the notebook is organised
+---
 
-0. **Setup** — install packages, mount Drive, set paths and credentials.
-1. **Data acquisition** — raw MSCI, GDELT 2.0, WRDS (CRSP / Compustat / MF-holdings), Refinitiv/LSEG.
-2. **Cleaning & matching** — point-in-time rule, ISIN↔ISSUERID and ultimate-parent keys, winsorisation.
-3. **Variable construction** — the firm-year, monthly, issue-level, pricing and event-study panels.
-4. **Tests, tables & figures** — every manuscript exhibit, each cell mapped to its table/figure.
+## 2. Data required (not included; licensed)
 
-## ⚠️ Data access
+- **MSCI ESG**, July-2026 vintage: `HIST_SUMMARY_SCORES_20260731`, `HIST_CONTROVERSIES_20260731`, `HIST_MASTER_*_20260731`.
+- **LSEG** monthly total returns (`monthly_total_returns.csv`) and **CRSP** daily returns for the event studies.
+- **Compustat** annual (firm size for representativeness).
+- **CRSP Mutual Fund Holdings** (index-vs-other ESG fund flows).
+- **GDELT** 2.0 (DOC API), retrieved via the Colab notebook described in `docs/EXTERNAL_CLOCK.md`.
 
-The four raw sources (MSCI ESG, GDELT, WRDS, Refinitiv/LSEG) are **licensed**. This repo contains **code only** — no raw data. Put the licensed files in your own Google Drive (Section 0 of the notebook shows the expected filenames) and supply your own WRDS login and Refinitiv app key. The `.gitignore` is set up to keep data and credentials out of the repository. Sections 2–4 run entirely on the files the Section 1 cells produce.
+Set the paths at the top of each script. Panels regenerated by the pipeline (e.g. `panel_fy_validtime.parquet`)
+are **not** shipped; they are rebuilt by `pipeline/02`.
 
-## Citation
+---
 
-If you use this code, please cite the paper. Standard errors are clustered by ultimate parent throughout; the letter-band width is 10/7 ≈ 1.4286 IAS points; 2020 is reported separately.
+## 3. Reproduce
+
+```bash
+# 1. Core panels, main tables/figures, narrative stats:
+cd pipeline && bash run_all.sh
+
+# 2. Robustness appendices:
+cd ../robustness && python a2_table2_backfill.py && python a3_threshold.py \
+    && python a5_implied.py && python build_results.py
+
+# 3. External clock (keyword screen) then the hand-verified lag:
+cd ../external_clock && python a4_clock_sample.py          # funnel, representativeness, reweighted lag
+cd ../audit && python lag_v3.py                            # hand-verified clock + audited-date returns
+
+# 4. Consequences:
+cd ../consequences && python section8_final.py && python section8_extra.py && python a1_ownership_linked.py
+```
+
+All standard errors are **clustered by ultimate parent** (29,119 groups) unless a script states otherwise.
+Letter-band width = 10/7 ≈ 1.4286 IAS points. 2020 is reported separately throughout. Single July-2026 vintage.
+Canonical sample: **401,885 firm-years / 76,487 issuers / 29,119 ultimate-parent groups** (the
+`START_DATE >= 20150101` screen on IAS records; without it N = 414,175).
+
+---
+
+## 4. Exhibit → script map (current manuscript, v3)
+
+| Manuscript exhibit | Produced by | Output file(s) |
+|---|---|---|
+| Table 1 — Summary statistics | `pipeline/01`, `pipeline/02`; `robustness/a6` | log `[TABLE 1]`; `robustness/results/T1_new.csv` |
+| Table 2 — Severity-graded incorporation (ΔIAS on ΔC^s) | `pipeline/02` | log `[TABLE 2]` |
+| Table 3 — Early vs late same-year/next-year timing | `pipeline/02`; `robustness/a2` (backfill); `pipeline/10` (first-coverage) | log `[TABLE 3]`; `robustness/results/A2_*.csv` |
+| Table 4 — Revision frequency / ownership | `pipeline/01`; `consequences/a1` | log `[TABLE 4]`; `consequences/results/A1_ownership_linked.csv` |
+| Table 5 — Channel: WAKIS → IAS pass-through | `pipeline/03` | log `[§6.3/§6.4]` |
+| Table 6 — Letter-stage attenuation / distance-to-threshold | `pipeline/03`; `robustness/a3` | `robustness/results/A3_threshold_lpm.csv`, `A3_tests.csv` |
+| Table 7 + Figure 2 — Letter-category bunching | `robustness/a3`; `pipeline/04` | `robustness/results/A3_bunching_counts.csv`, `fig2_bunching_paper.png` |
+| Table 8 — Pillar incorporation (E/S/G) | `pillar_forward_backward/pillar_forward_ownership.py` | `pillar_forward_backward/results/P1_pillar_incorporation.csv`, `P1_pillar_frequency.csv` |
+| Table 9 — External clock (incorporation lag) | `external_clock/a4` + `external_clock/09`; **`audit/lag_v3.py`** | `audit/L1v3_lag_descriptive.csv`, `L4v3_lag_distribution.csv`; `external_clock/results/A4_*` |
+| Table 10 — Pricing / abnormal returns (Carhart CARs) | `pipeline/07`, `pipeline/08`; **`audit/`** | log `[TABLE 5/pricing]`; `audit/V1v3_returns_at_audited_dates.csv` |
+| Table 11 — Index-tracking vs other ESG fund flows | `consequences/section8_final`; `consequences/a1` | `consequences/results/I2_index_vs_other_ESG_funds.csv` |
+| Table 12 — Abnormal volume & liquidity around downgrades | `consequences/section8_extra` | `consequences/results/V1_abnormal_volume_liquidity.csv` |
+| Table 13 — Does the rating predict the future? | `pillar_forward_backward/score_predicts_returns_fundamentals.py` | `pillar_forward_backward/results/P4_score_predicts.csv` |
+| Appendix H — month-0 contrast, risk-adjusted paths, robustness | `downgrade_followup/H3_build_and_run.py` | `downgrade_followup/results/H4a_month0_contrast.csv`, `H4b_riskadj_paths.csv`, `H4c_robustness.csv` |
+| Appendix B — Robustness: acceleration / first-coverage | `pipeline/02`, `pipeline/04`, `pipeline/10` | `docs/CONSTRUCTION_DOCUMENTATION.md`; log `[first coverage]` |
+| Appendix C — Cross-issue spillover & reclassification | `pipeline/06`, `pipeline/03`, `pipeline/05` | `pipeline` log; Table A4 note |
+| Appendix F — GDELT retrieval & keyword dictionary | `external_clock/` (`K0_keyword_dictionary.csv`, `run_meta.json`, `a4_clock_sample.py`) | `external_clock/results/A4_funnel.csv`, `A4_representativeness.csv` |
+| Appendix G — Methodology-implied ΔWAKIS | `robustness/a5` | `robustness/results/A5_implied.csv` |
+| Appendix H — Two-event study | `pipeline/08` | log `[TABLE 6 two-event]` |
+| §7.1 placebo (true vs placebo match rate) | `external_clock/a4`; `external_clock/results/K3_placebo_validation.csv` | `K3_placebo_validation.csv` |
+| Figure 1 — Rating architecture | `pipeline/00` | `latex/figures/fig1_architecture.png` |
+
+> The two clocks are distinct objects and must not be combined. `external_clock/` is the **automated**
+> keyword screen (median implied lag ≈ 135 days across 2,399 auto-matched controversies, noisy).
+> `audit/` is the **hand-verified** clock on 223 US/UK onsets (the manuscript's reported lag). The automated
+> screen funnels onsets into the hand audit; it does not itself produce the headline lag number.
+
+---
+
+## 5. The external clock in one paragraph
+
+US and UK controversy records only (English-language matching is far more reliable and the US is the
+largest part of the sample — justified in Appendix F). MSCI controversy records are matched to GDELT 2.0
+over a window from the MSCI record date back to three years prior, using a 718-term dictionary across 25
+key issues (`external_clock/K0_keyword_dictionary.csv`; roles: core issue terms, regulator/enforcement
+bodies, generic event words, severity words, and exclude-title terms), matched on article **title and
+body**. Automated matches were passed through Claude AI to strip paywalled and false-flag hits, then
+**hand-verified by Elegi Zuhri**. Parameters are frozen in `external_clock/run_meta.json`
+(GDELT 2015-09-01→2026-10-20, countries US,GB, match_on body, placebo share 0.3, seed 7). Funnel:
+14,207 onsets → 2,399 auto-matched → 727 screened → 239 selected → **223 verified**. A placebo that shifts
+each MSCI date back one year validates the match (`K3_placebo_validation.csv`). `HAND_CHECK_300.xlsx`
+and `A4_second_coder_30.xlsx` support an independent second coder on a random 30 cases.
+
+---
+
+## 6. Changelog
+
+### v42 (this build)
+- Added `downgrade_followup/` (`H3_build_and_run.py` + `results/H4a_month0_contrast.csv`, `H4b_riskadj_paths.csv`, `H4c_robustness.csv`): the two reviewer tests on the post-downgrade drift (month-0 vs flanking-months contrast; Table H3 under market-adjusted, momentum-matched, and four-factor returns) and the backfill/re-rating/sub-period robustness, plus the ultimate-parent-level path. The script rebuilds the downgrade event-study kit from HIST_SUMMARY_SCORES + the master reference + monthly_total_returns. Conclusions: no detectable short-window reaction at the change (month-0 contrast -0.32pp t=-2.1 full / insignificant at parent level and on US four-factor); the symmetric drift survives momentum and four-factor adjustment and the backfill/re-rating exclusions.
+
+### v41 (this build)
+- Restricted `pillar_forward_backward/score_predicts_returns_fundamentals.py` to the paper's canonical
+  sample window (base year t in **2018–2025 excluding 2020**), so Table 13 is estimated on the same sample
+  as Tables 2/5 rather than the full 2016–2025 span. Regenerated `results/P4_score_predicts.csv` and the
+  Excel's "Predicts returns-fundamentals" tab. Conclusions unchanged: no next-12m return prediction
+  (**−0.003 per SD, t=−1.2**, N=22,227; the next-12m return is winsorised at 0.5/99.5 to match the
+  Appendix H return tests), small unpriced next-year ROA signal (**+0.003 per SD, t=4.7**, current-ROA control 0.77 t=32, N=8,257, mean ROA 10.0%). Draft §7.5/Table 13 and the abstract updated
+  to match; the forward-controversy test (Table 13 companion, `P2`) already used 2018–2024.
+
+### v40 (this build)
+- Added `pillar_forward_backward/score_predicts_returns_fundamentals.py` (+ `results/P4_score_predicts.csv`,
+  and a 5th tab in the Excel): does the ESG rating (IAS) predict the future? It does NOT predict the next-12-month
+  market-adjusted return (+0.004 per SD, t=0.3), and only weakly predicts next-year operating ROA (+0.0024 per SD,
+  t=4.0, swamped by ROA persistence 0.74) — a small, unpriced, likely firm-quality correlation. Folded into the
+  manuscript as Table 13 in section 7.5.
+
+### v39 (this build)
+- Added `pillar_forward_backward/pillar_forward_ownership.py` (+ `results/P1_*,P2_*,P3_*.csv` and
+  `Pillar_forward_ownership_results.xlsx`), supporting the E/S/G pillar subsection (Table 8) and the
+  forward- vs backward-looking discussion:
+    (1) PILLAR split of the severity-graded incorporation (Table 2 spec: binding measure, year FE,
+        ultimate-parent clustering, 2018-2025 excl. 2020, first-coverage-robust). Social dominates both
+        frequency (70.7% of severe+) and very-severe incorporation (-0.37, t=-4.9); governance significant
+        at severe (-0.13, t=-2.4); environmental imprecise.
+    (2) FORWARD-LOOKING test: pillar SCORE[t] does not predict a severe controversy in that pillar at t+1
+        beyond persistence (score coef <=|0.0013| per SD, mixed sign; current-controversy coef 0.42-0.74).
+    (3) OWNERSHIP WEIGHT: ESG-named funds hold 0.21% of shares on average; index-tracking ESG funds 0.03%.
+- Manuscript synced to `Information_transmission_EZGM_v2-1_pillars.docx` (new section 6.5 + Table 8,
+  section 7.5, and the ownership-weight paragraph in 7.3).
+
+### v38 (this build)
+- Added `consequences/downgrade_drift_eventstudy.py` (+ `results/H3_*` and `downgrade_drift_LOG.txt`): the
+  event-time return path around letter downgrades behind **Table H3**. It shows the post-downgrade drift is
+  symmetric about the event (−2.5% in the six months before, −0.5% in the downgrade month, −2.2% in the six
+  months after; balanced window, firm-clustered t), i.e. no abnormal return at the change — reconciling
+  Appendix H with the main no-reaction result. It also shows the drift is **not** an MSCI re-issue/backfill
+  artifact (survives excluding the 2026-03-23 re-rating, the 2019-07-01 backfill and 2019–2020; −2.7% pre-2019,
+  −1.8% 2021+) and is not absorbed by the firm’s own past-6-month return.
+- Manuscript synced to `Information_transmission_EZGM_v11.docx` (Table H3 added; Section 7/8 return wording
+  qualified to "no reaction at the point of the change"; Berg et al. (2026) bunching match + positioning).
+
+### v37 (this build)
+- Added `robustness/verify_data_facts.py` (+ `verify_data_facts_LOG.txt`), which reproduces the Section 4
+  descriptive facts now stated in the manuscript: the within-2020 re-issue of MSCI severity records
+  (748,944 records / 50,158 issuers closed 2020-08-28; 134,326 / 14,299 opened 2020-11-10), the collapse in
+  severity records in force from 910,230 (62,816 issuers) at end-2019 to 325,560 (15,347) at end-2020, the
+  1 July 2019 coverage-start backfill (920,424 / 62,716), and the IAS-vs-WAKIS gap behind Table 1 (WAKIS
+  401,872 / ΔWAKIS 401,835 vs 401,885). These numbers are the measurement basis for excluding change-year
+  2020 from the baseline (it is retained only as the Table 3 robustness row) and for the Table 1 WAKIS note.
+- Manuscript synced to `Information_transmission_EZGM_v4.docx` (Section 4 wording: residual no longer read as
+  minor/low-severity; Table 1 WAKIS-N footnote; 2020 re-issue figures). No estimates or code paths changed.
+
+### v36 (this build)
+- **Every test and move now scripted into the package.** Added `consequences/` (Section 7 real-effects:
+  `section8_final.py`, `section8_extra.py`, `a1_ownership_linked.py` + result CSVs), `robustness/`
+  (`a2` backfill, `a3` threshold/bunching, `a5` implied ΔWAKIS, `a6` section numbers, `build_results.py`),
+  `external_clock/` (full keyword dictionary, `run_meta.json`, automated clock, placebo, funnel, hand-check
+  inputs, `a4_clock_sample.py`, `09_external_clock.py`), and `audit/` (`lag_v3.py` + the hand-verified
+  `L*/K*/V1` result CSVs and `LOG_v3.txt`). This closes the long-standing "script the Section 8 pipeline
+  into this package" item.
+- Added `docs/EXTERNAL_CLOCK.md` (as-run keyword method) and `MANIFEST.md`.
+- Added the current-manuscript exhibit→script map (section 4 above).
+- Excluded from the zip: the 35 MB raw scored-article dump (`K6_fetched_articles_scored.csv`), the GDELT
+  fetch caches (`fetch_cache.sqlite`, `kw_work.duckdb*`), and the intermediate `keyword_dated_clock`
+  raw-hit tables beyond the dated clock itself — all regenerated by the scripts. The outdated compiled
+  `docs/paper_main.pdf` was dropped; the authoritative manuscript is the Word file.
+
+### Earlier history (condensed)
+- **v35** — `06` re-run parent-clustered (Appendix C/A4: 12m −0.0091 t=−2.2, 24m −0.0232 t=−5.1; cross-issue
+  same-issue +0.01549 t=7.1, different-issue +0.00013 t=1.4). §6.5/App B hazard set to the `10` re-estimate
+  (coef 0.431, HR 1.54, z=2.4 parent-clustered); Table A3 reproduced exactly.
+- **v31–v33** — Sample reconciliation: 401,885 = `START_DATE >= 20150101` screen (vs 414,175 unscreened);
+  parent- vs firm-clustering reconciled (very-severe × Late t = −3.0 to −2.1 on the canonical sample);
+  first-covered-year artifact isolated in `10_robustness_firstcoverage.py` (most of the early-window lag and
+  the §6.5 47%→70% rise fade without 2019 coverage-start years). No acceleration claim retained; the
+  residual is not used for the lag.
+- **v28–v29** — Section 8 executed (Tables on CRSP/Compustat/holdings + hand-audited clock); supervisor
+  memo integrated (residual relabelled, severity×Late, onset-type ΔIAS, letter-threshold logit).
+- **v26–v27** — `02` rewritten to valid-time counts, ultimate-parent clustering, binding (max-per-key-issue)
+  treatment; canonical sample fixed; §2 severity-level wording fix.

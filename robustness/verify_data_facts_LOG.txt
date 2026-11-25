@@ -1,0 +1,18 @@
+== (a) Within-2020 re-issue of key-issue severity records ==
+  closed 2020-08-28: 748,944 records / 50,158 issuers   (paper: 748,944 / 50,158)
+  opened 2020-11-10: 134,326 records / 14,299 issuers   (paper: 134,326 / 14,299)
+
+== (b) Severity records in force at each year-end (valid-time) ==
+  end-2018:     5,763 records /  1,921 issuers
+  end-2019:   910,230 records / 62,816 issuers
+  end-2020:   325,560 records / 15,347 issuers
+  end-2021:   349,611 records / 16,336 issuers
+  (paper: ~910,000/62,800 at end-2019 -> ~326,000/15,300 at end-2020)
+
+== (c) Coverage-start backfill, effective-dated 1 July 2019 ==
+  START_DATE=2019-07-01: 920,424 records / 62,716 issuers   (paper: 920,424 / 62,716)
+
+== (d) IAS-vs-WAKIS gap behind Table 1's WAKIS / dWAKIS N ==
+  year 2022: IAS firms=16,185; with WAKIS=16,180; IAS-but-no-WAKIS=5
+  => a few firm-years each year carry an IAS with no WAKIS in force at year-end, so in Table 1
+     WAKIS=401,872 and dWAKIS (needs WAKIS in t and t-1)=401,835 vs 401,885 for all other variables.

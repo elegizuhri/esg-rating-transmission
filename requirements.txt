@@ -1,0 +1,10 @@
+# Core analysis stack (the pipeline notebook installs these in Colab automatically)
+duckdb==1.1.3
+pandas
+numpy
+statsmodels
+pyarrow
+# Data acquisition (need your own credentials)
+wrds
+refinitiv-data
+gdelt

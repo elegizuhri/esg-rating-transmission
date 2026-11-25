@@ -1,0 +1,6 @@
+stage,N,dropped,reason for drop
+"US and UK controversy onsets, excluding the 1 July 2019 backfill and 31 August 2017 floor dates",14207,10820,"25,027 US/UK onsets before excluding 10,820 backfill/floor onsets"
+With at least one GDELT article matching the firm and the key issue,2399,11808,no matched article in the GDELT keyword search
+Selected for the audit file,727,1729,"670 matched onsets retained after a first screening round (638 with an article 0–90 days before the MSCI date), plus 57 remaining very severe onsets"
+Incident and earliest public report verified,239,488,Screen only: 314; Unresolved: 166; Wrong firm: 8
+Final sample,223,16,"dated 23 March 2026, MSCI's re-rating of all issuers"

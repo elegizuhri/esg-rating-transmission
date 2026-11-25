@@ -1,0 +1,6 @@
+screen_window,N,median_lag,mean_lag,winsor_mean
+0-60 days,167,65,96,96
+0-90 days,207,71,102,101
+0-120 days,212,71,104,103
+0-180 days,217,76,108,107
+no cap,239,80,118,117

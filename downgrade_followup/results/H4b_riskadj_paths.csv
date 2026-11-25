@@ -1,0 +1,4 @@
+returns,before_pct,t_before,month0_pct,t_month0,after_pct,t_after,N
+Market-adjusted (full),-1.7,-4.44,-0.6,-3.91,-1.57,-4.31,4305
+Momentum-matched (full),-1.51,-4.0,-0.59,-3.88,-1.36,-3.81,4198
+Four-factor abnormal (US-listed),-2.76,-3.35,-0.84,-2.5,-2.75,-3.56,1245

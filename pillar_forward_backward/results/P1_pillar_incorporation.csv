@@ -1,0 +1,7 @@
+sample,pillar,severe_coef,severe_t,vsev_coef,vsev_t,N,clusters
+Full (2020 excl.),E,-0.1171,-1.5,-0.2031,-0.9,401885,29119
+Full (2020 excl.),S,-0.0734,-2.7,-0.3729,-4.9,401885,29119
+Full (2020 excl.),G,-0.1279,-2.4,-0.2372,-0.5,401885,29119
+Excl. first-covered,E,-0.1511,-1.8,-0.1923,-0.8,387496,29119
+Excl. first-covered,S,-0.0543,-1.5,-0.3824,-4.9,387496,29119
+Excl. first-covered,G,-0.132,-2.4,-0.2409,-0.5,387496,29119

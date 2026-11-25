@@ -1,0 +1,3 @@
+measure,mean_pct,median_pct,p90_pct,n_firm_quarters
+All ESG-named funds,0.21,0.074,0.424,125831
+Index-tracking ESG funds,0.029,0.0,0.054,125831

@@ -1,0 +1,6 @@
+sample,mean_pct,t,N
+all downgrades (baseline),-2.24,-6.81,4948
+excl. mass batch dates (re-rating+backfill),-2.24,-6.81,4948
+excl. 2019-2020 (backfill+re-issue),-2.17,-6.23,4293
+2021 onward only,-1.79,-3.53,2534
+2018 and earlier (pre-backfill),-2.73,-6.06,1759

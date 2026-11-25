@@ -1,0 +1,4 @@
+returns,month0_pct,flank_pct,diff_pp,t_diff,N
+Market-adjusted (full),-0.6,-0.27,-0.32,-2.07,4305
+Momentum-matched (full),-0.59,-0.24,-0.35,-2.24,4198
+Four-factor abnormal (US-listed),-0.84,-0.46,-0.38,-1.11,1245

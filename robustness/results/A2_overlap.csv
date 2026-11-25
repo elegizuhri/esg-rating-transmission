@@ -1,0 +1,10 @@
+,0
+canonical,401885
+backfill_any,4746
+backfill_with_change,4075
+first_covered,14389
+both,3927
+backfill_not_first,819
+first_not_backfill,10462
+union,15208
+backfill_by_year,{2019: 4746}

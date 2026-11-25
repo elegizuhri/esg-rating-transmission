@@ -1,0 +1,144 @@
+=== L1 audited logging lag ===
+                                                       sample   N  events  firms   mean  median   p25    p75  le30  le90  le180  gt365
+A. Verified (audited earliest date), excl. v5.0 re-rating day 223     185     75 108.49    80.0 39.00 164.00  0.22  0.57   0.78   0.02
+                                  B. Verified, excl. all 2026 223     185     75 108.49    80.0 39.00 164.00  0.22  0.57   0.78   0.02
+                         C. Verified incl. v5.0 re-rating day 239     201     85 117.98    80.0 40.50 167.00  0.20  0.55   0.76   0.03
+  D. Verified + headline-screen rows (GDELT date), excl. v5.0 537     451    191  69.66    49.0 21.00  80.00  0.33  0.82   0.91   0.01
+                                                  A: moderate 102     102     54 104.33    77.5 40.25 144.00  0.22  0.60   0.81   0.02
+                                                    A: severe  66      66     30 101.30    79.0 36.25 139.75  0.23  0.58   0.83   0.02
+                                               A: very_severe  55      55     17 124.82    99.0 42.50 204.50  0.20  0.49   0.67   0.02
+                                                   A: 2018-19  10       8      6  45.20    41.0 30.25  75.50  0.30  1.00   1.00   0.00
+                                                      A: 2020  40      38     27 105.05    59.5 35.50 188.75  0.25  0.57   0.72   0.00
+                                                   A: 2021-25 173     139     55 112.94    85.0 42.00 164.00  0.20  0.54   0.79   0.02
+                                                        A: GB  48      35     10  67.08    48.0 19.00  71.00  0.33  0.85   0.90   0.02
+                                                        A: US 175     150     65 119.85    94.0 42.50 172.50  0.18  0.49   0.75   0.02
+                                         A: verdict = Correct  25      23     20  39.76    36.0 17.00  56.00  0.48  0.92   1.00   0.00
+                               A: verdict = Late -> corrected  19      15     10  85.05    57.0 40.00  82.50  0.21  0.84   0.95   0.05
+                     A: verdict = Wrong incident -> corrected 179     147     58 120.58    94.0 47.00 184.50  0.18  0.49   0.74   0.02
+                           A, one row per incident (Event ID) 185     185     75 105.55    78.0 31.00 158.00  0.25  0.57   0.79   0.02
+
+=== L2 regressions ===
+                         sample                           model   term    coef      t     p   N
+                        A. days                    A. days, OLS severe   0.378  0.036 0.971 223
+                        A. days                    A. days, OLS   vsev  33.545  2.357 0.018 223
+                        A. days                    A. days, OLS  y2020  -9.200 -0.465 0.642 223
+                        A. days                    A. days, OLS  early -67.165 -3.292 0.001 223
+                        A. days                    A. days, OLS     uk -63.973 -2.809 0.005 223
+                        A. days         A. days, OLS + issue FE severe   2.388  0.197 0.844 223
+                        A. days         A. days, OLS + issue FE   vsev  16.393  0.935 0.350 223
+                        A. days         A. days, OLS + issue FE  y2020   2.233  0.109 0.913 223
+                        A. days         A. days, OLS + issue FE  early -65.567 -3.790 0.000 223
+                        A. days         A. days, OLS + issue FE     uk -61.745 -2.048 0.041 223
+       A. log(1+lag) + issue FE        A. log(1+lag) + issue FE severe  -0.082 -0.569 0.569 223
+       A. log(1+lag) + issue FE        A. log(1+lag) + issue FE   vsev   0.067  0.291 0.771 223
+       A. log(1+lag) + issue FE        A. log(1+lag) + issue FE  y2020   0.054  0.212 0.832 223
+       A. log(1+lag) + issue FE        A. log(1+lag) + issue FE  early  -1.118 -3.141 0.002 223
+       A. log(1+lag) + issue FE        A. log(1+lag) + issue FE     uk  -0.862 -1.991 0.046 223
+A. median regression + issue FE A. median regression + issue FE severe   0.399  0.030 0.976 223
+A. median regression + issue FE A. median regression + issue FE   vsev   9.852  0.582 0.561 223
+A. median regression + issue FE A. median regression + issue FE  y2020 -23.399 -1.628 0.105 223
+A. median regression + issue FE A. median regression + issue FE  early -68.018 -2.542 0.012 223
+A. median regression + issue FE A. median regression + issue FE     uk -92.399 -6.338 0.000 223
+                        B. days                    B. days, OLS severe   0.378  0.036 0.971 223
+                        B. days                    B. days, OLS   vsev  33.545  2.357 0.018 223
+                        B. days                    B. days, OLS  y2020  -9.200 -0.465 0.642 223
+                        B. days                    B. days, OLS  early -67.165 -3.292 0.001 223
+                        B. days                    B. days, OLS     uk -63.973 -2.809 0.005 223
+                        B. days         B. days, OLS + issue FE severe   2.388  0.197 0.844 223
+                        B. days         B. days, OLS + issue FE   vsev  16.393  0.935 0.350 223
+                        B. days         B. days, OLS + issue FE  y2020   2.233  0.109 0.913 223
+                        B. days         B. days, OLS + issue FE  early -65.567 -3.790 0.000 223
+                        B. days         B. days, OLS + issue FE     uk -61.745 -2.048 0.041 223
+       B. log(1+lag) + issue FE        B. log(1+lag) + issue FE severe  -0.082 -0.569 0.569 223
+       B. log(1+lag) + issue FE        B. log(1+lag) + issue FE   vsev   0.067  0.291 0.771 223
+       B. log(1+lag) + issue FE        B. log(1+lag) + issue FE  y2020   0.054  0.212 0.832 223
+       B. log(1+lag) + issue FE        B. log(1+lag) + issue FE  early  -1.118 -3.141 0.002 223
+       B. log(1+lag) + issue FE        B. log(1+lag) + issue FE     uk  -0.862 -1.991 0.046 223
+B. median regression + issue FE B. median regression + issue FE severe   0.399  0.030 0.976 223
+B. median regression + issue FE B. median regression + issue FE   vsev   9.852  0.582 0.561 223
+B. median regression + issue FE B. median regression + issue FE  y2020 -23.399 -1.628 0.105 223
+B. median regression + issue FE B. median regression + issue FE  early -68.018 -2.542 0.012 223
+B. median regression + issue FE B. median regression + issue FE     uk -92.399 -6.338 0.000 223
+                        D. days                    D. days, OLS severe   3.237  0.659 0.510 537
+                        D. days                    D. days, OLS   vsev  62.188  3.186 0.001 537
+                        D. days                    D. days, OLS  y2020   1.739  0.164 0.870 537
+                        D. days                    D. days, OLS  early -29.679 -3.333 0.001 537
+                        D. days                    D. days, OLS  y2026 -15.731 -0.740 0.459 537
+                        D. days                    D. days, OLS     uk -30.689 -2.395 0.017 537
+                        D. days         D. days, OLS + issue FE severe   3.763  0.762 0.446 537
+                        D. days         D. days, OLS + issue FE   vsev  58.693  3.217 0.001 537
+                        D. days         D. days, OLS + issue FE  y2020  -2.046 -0.165 0.869 537
+                        D. days         D. days, OLS + issue FE  early -29.910 -3.067 0.002 537
+                        D. days         D. days, OLS + issue FE  y2026 -36.691 -0.723 0.470 537
+                        D. days         D. days, OLS + issue FE     uk -33.569 -2.456 0.014 537
+       D. log(1+lag) + issue FE        D. log(1+lag) + issue FE severe  -0.039 -0.491 0.624 537
+       D. log(1+lag) + issue FE        D. log(1+lag) + issue FE   vsev   0.703  2.599 0.009 537
+       D. log(1+lag) + issue FE        D. log(1+lag) + issue FE  y2020   0.120  0.862 0.389 537
+       D. log(1+lag) + issue FE        D. log(1+lag) + issue FE  early  -0.576 -2.688 0.007 537
+       D. log(1+lag) + issue FE        D. log(1+lag) + issue FE  y2026  -2.349 -3.544 0.000 537
+       D. log(1+lag) + issue FE        D. log(1+lag) + issue FE     uk  -0.381 -1.928 0.054 537
+D. median regression + issue FE D. median regression + issue FE severe  -0.000 -0.000 1.000 537
+D. median regression + issue FE D. median regression + issue FE   vsev  37.999  4.542 0.000 537
+D. median regression + issue FE D. median regression + issue FE  y2020   1.000  0.186 0.852 537
+D. median regression + issue FE D. median regression + issue FE  early -24.000 -2.507 0.012 537
+D. median regression + issue FE D. median regression + issue FE  y2026 -69.999 -1.869 0.062 537
+D. median regression + issue FE D. median regression + issue FE     uk -16.999 -3.029 0.003 537
+
+=== L3 probability that a row has a verified date (linear probability) ===
+     term   coef      t
+Intercept  0.240  7.402
+   severe  0.147  4.804
+     vsev  0.673 16.401
+    y2020 -0.049 -0.932
+    early -0.054 -0.636
+    y2026 -0.064 -0.501
+       uk -0.041 -0.666
+
+lag_bin  N  share
+     <0  1  0.004
+   0-30 47  0.211
+  31-90 78  0.350
+ 91-180 49  0.220
+181-365 44  0.197
+   >365  4  0.018
+
+=== K1 months from news (external) vs from MSCI logging (internal) to the rating change ===
+                       clock         event  spells  events  KM_median_months   P12   P24
+external (audited news date) letter change     218     116              19.0 0.358 0.558
+external (audited news date)     downgrade     218      72               NaN 0.211 0.347
+        internal (MSCI date) letter change     219     116              21.0 0.346 0.577
+        internal (MSCI date)     downgrade     219      73               NaN 0.240 0.356
+
+=== K2 hazard (cloglog, month bins), severity effects ===
+                            model           term   coef    se      z     p                        clock event
+ external (audited news date)|any         severe -0.129 0.202 -0.636 0.525 external (audited news date)   any
+ external (audited news date)|any           vsev -0.810 0.263 -3.081 0.002 external (audited news date)   any
+ external (audited news date)|any dist_threshold  0.571 0.733  0.780 0.436 external (audited news date)   any
+external (audited news date)|down         severe -0.018 0.227 -0.078 0.938 external (audited news date)  down
+external (audited news date)|down           vsev -0.149 0.283 -0.526 0.599 external (audited news date)  down
+external (audited news date)|down dist_threshold -0.179 0.892 -0.201 0.841 external (audited news date)  down
+         internal (MSCI date)|any         severe  0.005 0.207  0.025 0.980         internal (MSCI date)   any
+         internal (MSCI date)|any           vsev -0.513 0.247 -2.077 0.038         internal (MSCI date)   any
+         internal (MSCI date)|any dist_threshold  0.622 0.778  0.799 0.424         internal (MSCI date)   any
+        internal (MSCI date)|down         severe  0.077 0.225  0.341 0.733         internal (MSCI date)  down
+        internal (MSCI date)|down           vsev -0.076 0.267 -0.283 0.777         internal (MSCI date)  down
+        internal (MSCI date)|down dist_threshold  0.495 0.898  0.551 0.581         internal (MSCI date)  down
+
+=== V returns at audited news dates (US-listed; one row per firm-date) ===
+    window                   date   N    mean       t
+car_-30_-2      audited news date 116 -0.0215 -2.1246
+car_-30_-2 placebo (news - 364 d) 115 -0.0013 -0.1665
+car_-30_-2              MSCI date 116 -0.0057 -0.5591
+car_-30_-2     news minus placebo 115 -0.0191 -1.4358
+  car_-1_1      audited news date 116 -0.0204 -2.5266
+  car_-1_1 placebo (news - 364 d) 115  0.0004  0.1324
+  car_-1_1              MSCI date 116  0.0062  1.8393
+  car_-1_1     news minus placebo 115 -0.0210 -2.3011
+   car_0_5      audited news date 116 -0.0237 -2.9227
+   car_0_5 placebo (news - 364 d) 115 -0.0043 -1.0636
+   car_0_5              MSCI date 116  0.0023  0.5984
+   car_0_5     news minus placebo 115 -0.0196 -2.2025
+ car_-5_20      audited news date 116 -0.0243 -2.3084
+ car_-5_20 placebo (news - 364 d) 115 -0.0053 -0.6208
+ car_-5_20              MSCI date 116  0.0066  0.6060
+ car_-5_20     news minus placebo 115 -0.0189 -1.2910

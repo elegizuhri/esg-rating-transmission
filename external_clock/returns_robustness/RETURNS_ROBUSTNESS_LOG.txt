@@ -1,0 +1,21 @@
+Keyword clock: 14,207 controversies (2,399 news-dated) of 3,320 firms
+  all=all: 14,207 controversies
+  severity=moderate: 10,424 controversies
+  severity=severe: 3,518 controversies
+  severity=very_severe: 265 controversies
+  country=GB: 2,443 controversies
+  country=US: 11,764 controversies
+  period=before 2020: 2,257 controversies
+  period=2020 on: 11,950 controversies
+  dating quality=issue precision >= 0.5: 80 controversies
+  dating quality=issue precision < 0.5 or unknown: 14,127 controversies
+  news lead=news <= 30d before MSCI: 12,408 controversies
+  news lead=news 31+d before MSCI: 13,607 controversies
+
+=== PRIMARY (pre-specified) tests ===
+test split group                    variant                                                  event window       term      N    mean     se       t      p   q_BH  primary
+  R1   all   all winsor_0.5_99.5 (baseline)                                     news month (dated)   m1_6   mean CAR   2061 -0.0188 0.0072 -2.6041 0.0092 0.0517     True
+  R2   all   all winsor_0.5_99.5 (baseline)                              car_f6 ~ K + I + month FE car_f6      K - I  49451  0.0105 0.0095  1.1025 0.2703 0.4733     True
+  R3   all   all winsor_0.5_99.5 (baseline) CAR6 ~ down + up + known12 + down x known12 + month FE   m1_6 dg_x_known 116007  0.0540 0.0200  2.6981 0.0070 0.0482     True
+
+All tests: 387 | p<0.05: 131 (about 19.4 expected by chance) | BH q<0.05: 57

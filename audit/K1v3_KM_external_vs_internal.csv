@@ -1,0 +1,5 @@
+clock,event,spells,events,KM_median_months,P12,P24
+external (audited news date),letter change,218,116,19.0,0.3580180972728413,0.5575980528924083
+external (audited news date),downgrade,218,72,,0.21118956808576428,0.3471421086180707
+internal (MSCI date),letter change,219,116,21.0,0.34605401552387194,0.5774040024005573
+internal (MSCI date),downgrade,219,73,,0.23958894548737164,0.35589667696644456

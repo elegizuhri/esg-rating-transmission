@@ -1,0 +1,13 @@
+# Never commit licensed raw data or credentials
+*.parquet
+*.csv
+!replication/**/results/*.csv
+!replication/**/audit/*.csv
+data/
+raw/
+built/
+.pgpass
+*.key
+*_app_key*
+.ipynb_checkpoints/
+__pycache__/

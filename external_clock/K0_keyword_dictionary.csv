@@ -1,0 +1,718 @@
+key_issue,role,term
+ACCESS_TO_FIN,core,redlining
+ACCESS_TO_FIN,core,lending discrimination
+ACCESS_TO_FIN,core,discriminatory lending
+ACCESS_TO_FIN,core,predatory lend*
+ACCESS_TO_FIN,core,predatory loan*
+ACCESS_TO_FIN,core,fair lending
+ACCESS_TO_FIN,core,overdraft fee*
+ACCESS_TO_FIN,core,junk fee*
+ACCESS_TO_FIN,core,payday loan*
+ACCESS_TO_FIN,core,payday lend*
+ACCESS_TO_FIN,core,subprime
+ACCESS_TO_FIN,core,unbanked
+ACCESS_TO_FIN,core,financial exclusion
+ACCESS_TO_FIN,core,mortgage discrimination
+ACCESS_TO_FIN,core,loan discrimination
+ACCESS_TO_FIN,core,debt collect*
+ACCESS_TO_FIN,core,Equal Credit Opportunity
+ACCESS_TO_FIN,core,Community Reinvestment Act
+ACCESS_TO_FIN,core,high cost credit
+ACCESS_TO_FIN,core,affordability checks
+ACCESS_TO_FIN,core,loan sharks
+ACCESS_TO_FIN,regulator,CFPB
+ACCESS_TO_FIN,regulator,Consumer Financial Protection Bureau
+ACCESS_TO_FIN,regulator,OCC
+ACCESS_TO_FIN,regulator,HUD
+ACCESS_TO_FIN,regulator,Department of Justice
+ACCESS_TO_FIN,regulator,DOJ
+ACCESS_TO_FIN,regulator,FCA
+ACCESS_TO_FIN,regulator,Financial Conduct Authority
+ACCESS_TO_FIN,regulator,Financial Ombudsman
+ACCESS_TO_HLTHCRE,core,drug pric*
+ACCESS_TO_HLTHCRE,core,price goug*
+ACCESS_TO_HLTHCRE,core,price hike*
+ACCESS_TO_HLTHCRE,core,insulin pric*
+ACCESS_TO_HLTHCRE,core,insulin cost*
+ACCESS_TO_HLTHCRE,core,pay for delay
+ACCESS_TO_HLTHCRE,core,patent abuse
+ACCESS_TO_HLTHCRE,core,patent thicket*
+ACCESS_TO_HLTHCRE,core,access to medicine*
+ACCESS_TO_HLTHCRE,core,claim denial*
+ACCESS_TO_HLTHCRE,core,denied coverage
+ACCESS_TO_HLTHCRE,core,coverage denial*
+ACCESS_TO_HLTHCRE,core,denied claims
+ACCESS_TO_HLTHCRE,core,drug shortage*
+ACCESS_TO_HLTHCRE,core,surprise billing
+ACCESS_TO_HLTHCRE,core,EpiPen
+ACCESS_TO_HLTHCRE,core,unaffordable drug*
+ACCESS_TO_HLTHCRE,core,list price*
+ACCESS_TO_HLTHCRE,regulator,FTC
+ACCESS_TO_HLTHCRE,regulator,Federal Trade Commission
+ACCESS_TO_HLTHCRE,regulator,HHS
+ACCESS_TO_HLTHCRE,regulator,CMS
+ACCESS_TO_HLTHCRE,regulator,Medicare
+ACCESS_TO_HLTHCRE,regulator,Senate committee
+ACCESS_TO_HLTHCRE,regulator,NHS
+ACCESS_TO_HLTHCRE,regulator,NICE
+ACCESS_TO_HLTHCRE,regulator,CMA
+ACCESS_TO_HLTHCRE,regulator,Competition and Markets Authority
+BIODIV_LAND_USE,core,deforest*
+BIODIV_LAND_USE,core,rainforest
+BIODIV_LAND_USE,core,habitat destruction
+BIODIV_LAND_USE,core,habitat loss
+BIODIV_LAND_USE,core,endangered species
+BIODIV_LAND_USE,core,biodiversity
+BIODIV_LAND_USE,core,protected area*
+BIODIV_LAND_USE,core,wetland*
+BIODIV_LAND_USE,core,land clearing
+BIODIV_LAND_USE,core,illegal logging
+BIODIV_LAND_USE,core,palm oil
+BIODIV_LAND_USE,core,Amazon rainforest
+BIODIV_LAND_USE,core,wildlife
+BIODIV_LAND_USE,core,national park
+BIODIV_LAND_USE,core,old growth
+BIODIV_LAND_USE,core,ecosystem damage
+BIODIV_LAND_USE,core,land grab*
+BIODIV_LAND_USE,core,peatland*
+BIODIV_LAND_USE,core,mining permit
+BIODIV_LAND_USE,core,wildlife refuge
+BIODIV_LAND_USE,regulator,EPA
+BIODIV_LAND_USE,regulator,Fish and Wildlife Service
+BIODIV_LAND_USE,regulator,Army Corps
+BIODIV_LAND_USE,regulator,Interior Department
+BIODIV_LAND_USE,regulator,Natural England
+BIODIV_LAND_USE,regulator,Environment Agency
+BUS_ETHICS_ANTICOMP,core,antitrust
+BUS_ETHICS_ANTICOMP,core,anti competitive
+BUS_ETHICS_ANTICOMP,core,anticompetitive
+BUS_ETHICS_ANTICOMP,core,price fixing
+BUS_ETHICS_ANTICOMP,core,price fixed
+BUS_ETHICS_ANTICOMP,core,cartel*
+BUS_ETHICS_ANTICOMP,core,collu*
+BUS_ETHICS_ANTICOMP,core,monopol*
+BUS_ETHICS_ANTICOMP,core,abuse of dominance
+BUS_ETHICS_ANTICOMP,core,dominant position
+BUS_ETHICS_ANTICOMP,core,competition law
+BUS_ETHICS_ANTICOMP,core,bid rigging
+BUS_ETHICS_ANTICOMP,core,no poach
+BUS_ETHICS_ANTICOMP,core,market power
+BUS_ETHICS_ANTICOMP,core,merger block*
+BUS_ETHICS_ANTICOMP,core,blocked merger
+BUS_ETHICS_ANTICOMP,core,competition probe
+BUS_ETHICS_ANTICOMP,regulator,FTC
+BUS_ETHICS_ANTICOMP,regulator,Federal Trade Commission
+BUS_ETHICS_ANTICOMP,regulator,Antitrust Division
+BUS_ETHICS_ANTICOMP,regulator,Department of Justice
+BUS_ETHICS_ANTICOMP,regulator,DOJ
+BUS_ETHICS_ANTICOMP,regulator,CMA
+BUS_ETHICS_ANTICOMP,regulator,Competition and Markets Authority
+BUS_ETHICS_ANTICOMP,regulator,European Commission
+BUS_ETHICS_ANTICOMP,regulator,Ofcom
+BUS_ETHICS_ANTICOMP,regulator,Ofgem
+BUS_ETHICS_ANTICOMP,regulator,Ofwat
+BUS_ETHICS_CORRUPTION,core,brib*
+BUS_ETHICS_CORRUPTION,core,corrupt*
+BUS_ETHICS_CORRUPTION,core,kickback*
+BUS_ETHICS_CORRUPTION,core,FCPA
+BUS_ETHICS_CORRUPTION,core,Foreign Corrupt Practices
+BUS_ETHICS_CORRUPTION,core,money launder*
+BUS_ETHICS_CORRUPTION,core,launder*
+BUS_ETHICS_CORRUPTION,core,sanctions violation*
+BUS_ETHICS_CORRUPTION,core,sanctions breach*
+BUS_ETHICS_CORRUPTION,core,embezzl*
+BUS_ETHICS_CORRUPTION,core,illicit payment*
+BUS_ETHICS_CORRUPTION,core,Bribery Act
+BUS_ETHICS_CORRUPTION,core,deferred prosecution
+BUS_ETHICS_CORRUPTION,core,graft
+BUS_ETHICS_CORRUPTION,regulator,DOJ
+BUS_ETHICS_CORRUPTION,regulator,Department of Justice
+BUS_ETHICS_CORRUPTION,regulator,SEC
+BUS_ETHICS_CORRUPTION,regulator,SFO
+BUS_ETHICS_CORRUPTION,regulator,Serious Fraud Office
+BUS_ETHICS_CORRUPTION,regulator,OFAC
+BUS_ETHICS_CORRUPTION,regulator,Treasury
+BUS_ETHICS_CORRUPTION,regulator,FinCEN
+BUS_ETHICS_CORRUPTION,regulator,FBI
+BUS_ETHICS_CORRUPTION,regulator,National Crime Agency
+BUS_ETHICS_ETHICSFRAUD,core,fraud*
+BUS_ETHICS_ETHICSFRAUD,core,accounting scandal
+BUS_ETHICS_ETHICSFRAUD,core,securities fraud
+BUS_ETHICS_ETHICSFRAUD,core,misled investors
+BUS_ETHICS_ETHICSFRAUD,core,misleading investors
+BUS_ETHICS_ETHICSFRAUD,core,false claims
+BUS_ETHICS_ETHICSFRAUD,core,whistleblow*
+BUS_ETHICS_ETHICSFRAUD,core,insider trading
+BUS_ETHICS_ETHICSFRAUD,core,restatement
+BUS_ETHICS_ETHICSFRAUD,core,restate*
+BUS_ETHICS_ETHICSFRAUD,core,Ponzi
+BUS_ETHICS_ETHICSFRAUD,core,cover up
+BUS_ETHICS_ETHICSFRAUD,core,falsif*
+BUS_ETHICS_ETHICSFRAUD,core,fake accounts
+BUS_ETHICS_ETHICSFRAUD,core,tax evasion
+BUS_ETHICS_ETHICSFRAUD,core,tax fraud
+BUS_ETHICS_ETHICSFRAUD,core,accounting irregularit*
+BUS_ETHICS_ETHICSFRAUD,core,misconduct
+BUS_ETHICS_ETHICSFRAUD,core,deceiv*
+BUS_ETHICS_ETHICSFRAUD,core,deceptive
+BUS_ETHICS_ETHICSFRAUD,core,kick out auditors
+BUS_ETHICS_ETHICSFRAUD,core,short seller report
+BUS_ETHICS_ETHICSFRAUD,regulator,SEC
+BUS_ETHICS_ETHICSFRAUD,regulator,Securities and Exchange Commission
+BUS_ETHICS_ETHICSFRAUD,regulator,DOJ
+BUS_ETHICS_ETHICSFRAUD,regulator,FBI
+BUS_ETHICS_ETHICSFRAUD,regulator,FCA
+BUS_ETHICS_ETHICSFRAUD,regulator,SFO
+BUS_ETHICS_ETHICSFRAUD,regulator,FRC
+BUS_ETHICS_ETHICSFRAUD,regulator,Financial Reporting Council
+BUS_ETHICS_ETHICSFRAUD,regulator,PCAOB
+BUS_ETHICS_ETHICSFRAUD,regulator,attorney general
+CHEM_SAFETY,core,PFAS
+CHEM_SAFETY,core,forever chemical*
+CHEM_SAFETY,core,toxic chemical*
+CHEM_SAFETY,core,glyphosate
+CHEM_SAFETY,core,Roundup
+CHEM_SAFETY,core,talc
+CHEM_SAFETY,core,asbestos
+CHEM_SAFETY,core,benzene
+CHEM_SAFETY,core,carcinogen*
+CHEM_SAFETY,core,cancer causing
+CHEM_SAFETY,core,BPA
+CHEM_SAFETY,core,phthalate*
+CHEM_SAFETY,core,chemical exposure
+CHEM_SAFETY,core,banned chemical*
+CHEM_SAFETY,core,hazardous chemical*
+CHEM_SAFETY,core,PCB*
+CHEM_SAFETY,core,chlorpyrifos
+CHEM_SAFETY,core,paraquat
+CHEM_SAFETY,core,ethylene oxide
+CHEM_SAFETY,regulator,EPA
+CHEM_SAFETY,regulator,FDA
+CHEM_SAFETY,regulator,CPSC
+CHEM_SAFETY,regulator,HSE
+CHEM_SAFETY,regulator,Health and Safety Executive
+CHEM_SAFETY,regulator,ECHA
+COMM_REL,core,protest*
+COMM_REL,core,community opposition
+COMM_REL,core,local opposition
+COMM_REL,core,indigenous
+COMM_REL,core,tribe*
+COMM_REL,core,tribal
+COMM_REL,core,First Nations
+COMM_REL,core,land rights
+COMM_REL,core,displac*
+COMM_REL,core,evict*
+COMM_REL,core,local residents
+COMM_REL,core,residents sue
+COMM_REL,core,community health
+COMM_REL,core,sacred site*
+COMM_REL,core,blockade*
+COMM_REL,core,Standing Rock
+COMM_REL,core,neighbours complain*
+COMM_REL,core,neighbors complain*
+COMM_REL,core,community lawsuit
+COMM_REL,core,pipeline opposition
+COMM_REL,regulator,Bureau of Indian Affairs
+COMM_REL,regulator,state regulators
+COMM_REL,regulator,planning inquiry
+COMM_REL,regulator,council
+CONTROV_SRC,core,conflict mineral*
+CONTROV_SRC,core,cobalt
+CONTROV_SRC,core,Xinjiang
+CONTROV_SRC,core,Uyghur*
+CONTROV_SRC,core,Uighur*
+CONTROV_SRC,core,blood diamond*
+CONTROV_SRC,core,conflict free
+CONTROV_SRC,core,sourcing scandal
+CONTROV_SRC,core,illegal timber
+CONTROV_SRC,core,sanctioned supplier*
+CONTROV_SRC,core,forced labo*
+CONTROV_SRC,regulator,CBP
+CONTROV_SRC,regulator,Customs and Border Protection
+CONTROV_SRC,regulator,withhold release order
+CONTROV_SRC,regulator,Department of Commerce
+E_WASTE,core,electronic waste
+E_WASTE,core,e waste
+E_WASTE,core,ewaste
+E_WASTE,core,recycling fraud
+E_WASTE,core,battery recycling
+E_WASTE,core,hazardous waste export*
+E_WASTE,core,planned obsolescence
+E_WASTE,core,right to repair
+E_WASTE,core,toxic e waste
+E_WASTE,core,dumped electronics
+E_WASTE,regulator,EPA
+E_WASTE,regulator,Environment Agency
+FINANCING_ENV_IMP,core,fossil fuel financ*
+FINANCING_ENV_IMP,core,financing fossil
+FINANCING_ENV_IMP,core,financ* coal
+FINANCING_ENV_IMP,core,coal financ*
+FINANCING_ENV_IMP,core,oil sands
+FINANCING_ENV_IMP,core,tar sands
+FINANCING_ENV_IMP,core,Arctic drilling
+FINANCING_ENV_IMP,core,Dakota Access
+FINANCING_ENV_IMP,core,pipeline financ*
+FINANCING_ENV_IMP,core,deforestation financ*
+FINANCING_ENV_IMP,core,greenwash*
+FINANCING_ENV_IMP,core,net zero pledge
+FINANCING_ENV_IMP,core,climate pledge
+FINANCING_ENV_IMP,core,Banking on Climate
+FINANCING_ENV_IMP,core,fossil fuel lend*
+FINANCING_ENV_IMP,core,climate activists
+FINANCING_ENV_IMP,regulator,SEC
+FINANCING_ENV_IMP,regulator,FCA
+FINANCING_ENV_IMP,regulator,Federal Reserve
+FINANCING_ENV_IMP,regulator,Bank of England
+FINANCING_ENV_IMP,regulator,attorney general
+FIN_PROD_SAFETY,core,mis sell*
+FIN_PROD_SAFETY,core,missell*
+FIN_PROD_SAFETY,core,PPI
+FIN_PROD_SAFETY,core,payment protection insurance
+FIN_PROD_SAFETY,core,unauthori*ed accounts
+FIN_PROD_SAFETY,core,fake accounts
+FIN_PROD_SAFETY,core,overcharg*
+FIN_PROD_SAFETY,core,hidden fee*
+FIN_PROD_SAFETY,core,unsuitable invest*
+FIN_PROD_SAFETY,core,investor losses
+FIN_PROD_SAFETY,core,consumer harm
+FIN_PROD_SAFETY,core,deceptive market*
+FIN_PROD_SAFETY,core,foreclos*
+FIN_PROD_SAFETY,core,robo signing
+FIN_PROD_SAFETY,core,overdraft*
+FIN_PROD_SAFETY,core,add on insurance
+FIN_PROD_SAFETY,core,car finance
+FIN_PROD_SAFETY,core,motor finance
+FIN_PROD_SAFETY,core,interest only mortgage*
+FIN_PROD_SAFETY,core,customer redress
+FIN_PROD_SAFETY,core,compensat* customers
+FIN_PROD_SAFETY,regulator,CFPB
+FIN_PROD_SAFETY,regulator,SEC
+FIN_PROD_SAFETY,regulator,FINRA
+FIN_PROD_SAFETY,regulator,FCA
+FIN_PROD_SAFETY,regulator,Financial Conduct Authority
+FIN_PROD_SAFETY,regulator,Financial Ombudsman
+FIN_PROD_SAFETY,regulator,OCC
+FIN_PROD_SAFETY,regulator,Federal Reserve
+FIN_PROD_SAFETY,regulator,attorney general
+HLTH_SAFETY,core,worker death*
+HLTH_SAFETY,core,worker* killed
+HLTH_SAFETY,core,worker died
+HLTH_SAFETY,core,workplace death*
+HLTH_SAFETY,core,workplace fatalit*
+HLTH_SAFETY,core,workplace injur*
+HLTH_SAFETY,core,injured worker*
+HLTH_SAFETY,core,workplace accident*
+HLTH_SAFETY,core,unsafe working conditions
+HLTH_SAFETY,core,unsafe conditions
+HLTH_SAFETY,core,explosion
+HLTH_SAFETY,core,plant fire
+HLTH_SAFETY,core,refinery fire
+HLTH_SAFETY,core,mine accident
+HLTH_SAFETY,core,mine collapse
+HLTH_SAFETY,core,safety violation*
+HLTH_SAFETY,core,heat illness
+HLTH_SAFETY,core,warehouse injur*
+HLTH_SAFETY,core,crushed
+HLTH_SAFETY,core,fatal accident
+HLTH_SAFETY,core,electrocut*
+HLTH_SAFETY,core,fell to his death
+HLTH_SAFETY,core,fell to her death
+HLTH_SAFETY,core,COVID outbreak at
+HLTH_SAFETY,core,employees died
+HLTH_SAFETY,regulator,OSHA
+HLTH_SAFETY,regulator,Occupational Safety
+HLTH_SAFETY,regulator,MSHA
+HLTH_SAFETY,regulator,Mine Safety
+HLTH_SAFETY,regulator,Chemical Safety Board
+HLTH_SAFETY,regulator,CSB
+HLTH_SAFETY,regulator,HSE
+HLTH_SAFETY,regulator,Health and Safety Executive
+HUMAN_CAPITAL_DEV,core,discriminat*
+HUMAN_CAPITAL_DEV,core,gender pay gap
+HUMAN_CAPITAL_DEV,core,pay gap
+HUMAN_CAPITAL_DEV,core,equal pay
+HUMAN_CAPITAL_DEV,core,sexual harass*
+HUMAN_CAPITAL_DEV,core,harass*
+HUMAN_CAPITAL_DEV,core,hostile work environment
+HUMAN_CAPITAL_DEV,core,racial bias
+HUMAN_CAPITAL_DEV,core,racism
+HUMAN_CAPITAL_DEV,core,racist
+HUMAN_CAPITAL_DEV,core,age discrimination
+HUMAN_CAPITAL_DEV,core,pregnancy discrimination
+HUMAN_CAPITAL_DEV,core,wrongful termination
+HUMAN_CAPITAL_DEV,core,wrongful dismissal
+HUMAN_CAPITAL_DEV,core,unfair dismissal
+HUMAN_CAPITAL_DEV,core,retaliat*
+HUMAN_CAPITAL_DEV,core,diversity lawsuit
+HUMAN_CAPITAL_DEV,core,mass layoff*
+HUMAN_CAPITAL_DEV,core,layoff*
+HUMAN_CAPITAL_DEV,core,redundanc*
+HUMAN_CAPITAL_DEV,core,toxic culture
+HUMAN_CAPITAL_DEV,core,workplace culture
+HUMAN_CAPITAL_DEV,regulator,EEOC
+HUMAN_CAPITAL_DEV,regulator,Equal Employment Opportunity
+HUMAN_CAPITAL_DEV,regulator,Department of Labor
+HUMAN_CAPITAL_DEV,regulator,EHRC
+HUMAN_CAPITAL_DEV,regulator,Equality and Human Rights Commission
+HUMAN_CAPITAL_DEV,regulator,Employment Tribunal
+HUMAN_CAPITAL_DEV,regulator,employment tribunal
+LABOR_MGMT,core,union bust*
+LABOR_MGMT,core,strike*
+LABOR_MGMT,core,walkout*
+LABOR_MGMT,core,walk out
+LABOR_MGMT,core,labor dispute
+LABOR_MGMT,core,labour dispute
+LABOR_MGMT,core,unfair labor practice*
+LABOR_MGMT,core,wage theft
+LABOR_MGMT,core,unpaid wages
+LABOR_MGMT,core,unpaid overtime
+LABOR_MGMT,core,overtime violation*
+LABOR_MGMT,core,minimum wage
+LABOR_MGMT,core,collective bargaining
+LABOR_MGMT,core,lockout
+LABOR_MGMT,core,unioni*
+LABOR_MGMT,core,union election
+LABOR_MGMT,core,zero hours
+LABOR_MGMT,core,misclassif*
+LABOR_MGMT,core,workers rights
+LABOR_MGMT,core,picket*
+LABOR_MGMT,core,industrial action
+LABOR_MGMT,core,layoff*
+LABOR_MGMT,core,furlough*
+LABOR_MGMT,regulator,NLRB
+LABOR_MGMT,regulator,National Labor Relations Board
+LABOR_MGMT,regulator,Department of Labor
+LABOR_MGMT,regulator,Wage and Hour
+LABOR_MGMT,regulator,Employment Tribunal
+LABOR_MGMT,regulator,ACAS
+LABOR_MGMT,regulator,HMRC
+OPPS_NUTRI_HLTH,core,sugar*
+OPPS_NUTRI_HLTH,core,sugary
+OPPS_NUTRI_HLTH,core,obesity
+OPPS_NUTRI_HLTH,core,junk food
+OPPS_NUTRI_HLTH,core,marketing to children
+OPPS_NUTRI_HLTH,core,advertising to children
+OPPS_NUTRI_HLTH,core,misleading health claim*
+OPPS_NUTRI_HLTH,core,health claims
+OPPS_NUTRI_HLTH,core,nutrition label*
+OPPS_NUTRI_HLTH,core,ultra processed
+OPPS_NUTRI_HLTH,core,sodium
+OPPS_NUTRI_HLTH,core,salt content
+OPPS_NUTRI_HLTH,core,trans fat
+OPPS_NUTRI_HLTH,core,soda tax
+OPPS_NUTRI_HLTH,core,sugar tax
+OPPS_NUTRI_HLTH,core,infant formula
+OPPS_NUTRI_HLTH,core,baby formula
+OPPS_NUTRI_HLTH,core,baby food
+OPPS_NUTRI_HLTH,regulator,FDA
+OPPS_NUTRI_HLTH,regulator,FTC
+OPPS_NUTRI_HLTH,regulator,USDA
+OPPS_NUTRI_HLTH,regulator,ASA
+OPPS_NUTRI_HLTH,regulator,Advertising Standards Authority
+OPPS_NUTRI_HLTH,regulator,Food Standards Agency
+PACK_MAT_WASTE,core,plastic pollution
+PACK_MAT_WASTE,core,plastic waste
+PACK_MAT_WASTE,core,single use plastic*
+PACK_MAT_WASTE,core,packaging waste
+PACK_MAT_WASTE,core,plastic packaging
+PACK_MAT_WASTE,core,microplastic*
+PACK_MAT_WASTE,core,recycling claim*
+PACK_MAT_WASTE,core,recyclable claim*
+PACK_MAT_WASTE,core,top plastic polluter*
+PACK_MAT_WASTE,core,Break Free From Plastic
+PACK_MAT_WASTE,core,plastic bottle*
+PACK_MAT_WASTE,core,polluter*
+PACK_MAT_WASTE,regulator,EPA
+PACK_MAT_WASTE,regulator,Environment Agency
+PACK_MAT_WASTE,regulator,attorney general
+PRIVACY_DATA_SEC,core,data breach*
+PRIVACY_DATA_SEC,core,breach* of data
+PRIVACY_DATA_SEC,core,hacked
+PRIVACY_DATA_SEC,core,hack
+PRIVACY_DATA_SEC,core,hackers
+PRIVACY_DATA_SEC,core,cyber attack*
+PRIVACY_DATA_SEC,core,cyberattack*
+PRIVACY_DATA_SEC,core,ransomware
+PRIVACY_DATA_SEC,core,data leak*
+PRIVACY_DATA_SEC,core,leaked data
+PRIVACY_DATA_SEC,core,exposed data
+PRIVACY_DATA_SEC,core,personal data
+PRIVACY_DATA_SEC,core,privacy violation*
+PRIVACY_DATA_SEC,core,privacy lawsuit*
+PRIVACY_DATA_SEC,core,privacy breach*
+PRIVACY_DATA_SEC,core,GDPR
+PRIVACY_DATA_SEC,core,tracking users
+PRIVACY_DATA_SEC,core,facial recognition
+PRIVACY_DATA_SEC,core,biometric*
+PRIVACY_DATA_SEC,core,BIPA
+PRIVACY_DATA_SEC,core,customer data
+PRIVACY_DATA_SEC,core,security flaw*
+PRIVACY_DATA_SEC,core,data protection
+PRIVACY_DATA_SEC,core,spyware
+PRIVACY_DATA_SEC,core,cyber incident
+PRIVACY_DATA_SEC,regulator,FTC
+PRIVACY_DATA_SEC,regulator,Federal Trade Commission
+PRIVACY_DATA_SEC,regulator,ICO
+PRIVACY_DATA_SEC,regulator,Information Commissioner
+PRIVACY_DATA_SEC,regulator,SEC
+PRIVACY_DATA_SEC,regulator,attorney general
+PRIVACY_DATA_SEC,regulator,CISA
+PROD_SFTY_QUALITY,core,recall*
+PROD_SFTY_QUALITY,core,defect*
+PROD_SFTY_QUALITY,core,faulty
+PROD_SFTY_QUALITY,core,product liability
+PROD_SFTY_QUALITY,core,contaminat*
+PROD_SFTY_QUALITY,core,outbreak
+PROD_SFTY_QUALITY,core,E coli
+PROD_SFTY_QUALITY,core,salmonella
+PROD_SFTY_QUALITY,core,listeria
+PROD_SFTY_QUALITY,core,safety defect*
+PROD_SFTY_QUALITY,core,airbag*
+PROD_SFTY_QUALITY,core,ignition switch
+PROD_SFTY_QUALITY,core,crash* linked
+PROD_SFTY_QUALITY,core,deaths linked
+PROD_SFTY_QUALITY,core,injuries linked
+PROD_SFTY_QUALITY,core,warning letter
+PROD_SFTY_QUALITY,core,unsafe product*
+PROD_SFTY_QUALITY,core,malfunction*
+PROD_SFTY_QUALITY,core,quality control
+PROD_SFTY_QUALITY,core,grounded
+PROD_SFTY_QUALITY,core,safety probe
+PROD_SFTY_QUALITY,core,safety concerns
+PROD_SFTY_QUALITY,regulator,CPSC
+PROD_SFTY_QUALITY,regulator,Consumer Product Safety
+PROD_SFTY_QUALITY,regulator,NHTSA
+PROD_SFTY_QUALITY,regulator,FDA
+PROD_SFTY_QUALITY,regulator,FAA
+PROD_SFTY_QUALITY,regulator,USDA
+PROD_SFTY_QUALITY,regulator,FSA
+PROD_SFTY_QUALITY,regulator,Food Standards Agency
+PROD_SFTY_QUALITY,regulator,MHRA
+PROD_SFTY_QUALITY,regulator,OPSS
+PROD_SFTY_QUALITY,regulator,DVSA
+RAW_MAT_SRC,core,illegal logging
+RAW_MAT_SRC,core,deforestation linked
+RAW_MAT_SRC,core,linked to deforestation
+RAW_MAT_SRC,core,conflict mineral*
+RAW_MAT_SRC,core,cobalt
+RAW_MAT_SRC,core,mica
+RAW_MAT_SRC,core,palm oil
+RAW_MAT_SRC,core,cocoa
+RAW_MAT_SRC,core,cattle ranch*
+RAW_MAT_SRC,core,illegal mining
+RAW_MAT_SRC,core,traceability
+RAW_MAT_SRC,core,sourcing practices
+RAW_MAT_SRC,core,supply chain deforestation
+RAW_MAT_SRC,core,soy
+RAW_MAT_SRC,regulator,CBP
+RAW_MAT_SRC,regulator,Customs and Border Protection
+RESPONSIBLE_INVEST,core,greenwash*
+RESPONSIBLE_INVEST,core,ESG fund*
+RESPONSIBLE_INVEST,core,misleading ESG
+RESPONSIBLE_INVEST,core,ESG claims
+RESPONSIBLE_INVEST,core,sustainable fund*
+RESPONSIBLE_INVEST,core,investing in fossil
+RESPONSIBLE_INVEST,core,fossil fuel investment*
+RESPONSIBLE_INVEST,core,proxy vot*
+RESPONSIBLE_INVEST,core,shareholder resolution*
+RESPONSIBLE_INVEST,core,divest*
+RESPONSIBLE_INVEST,core,controversial weapons
+RESPONSIBLE_INVEST,core,stewardship
+RESPONSIBLE_INVEST,core,anti ESG
+RESPONSIBLE_INVEST,core,climate votes
+RESPONSIBLE_INVEST,regulator,SEC
+RESPONSIBLE_INVEST,regulator,FCA
+RESPONSIBLE_INVEST,regulator,attorney general
+SUPPLY_CHAIN_LAB,core,forced labo*
+SUPPLY_CHAIN_LAB,core,child labo*
+SUPPLY_CHAIN_LAB,core,sweatshop*
+SUPPLY_CHAIN_LAB,core,modern slavery
+SUPPLY_CHAIN_LAB,core,human trafficking
+SUPPLY_CHAIN_LAB,core,factory collapse
+SUPPLY_CHAIN_LAB,core,garment worker*
+SUPPLY_CHAIN_LAB,core,supplier abuse*
+SUPPLY_CHAIN_LAB,core,Uyghur*
+SUPPLY_CHAIN_LAB,core,Uighur*
+SUPPLY_CHAIN_LAB,core,Xinjiang
+SUPPLY_CHAIN_LAB,core,migrant worker*
+SUPPLY_CHAIN_LAB,core,debt bondage
+SUPPLY_CHAIN_LAB,core,factory fire
+SUPPLY_CHAIN_LAB,core,labor abuse*
+SUPPLY_CHAIN_LAB,core,labour abuse*
+SUPPLY_CHAIN_LAB,core,slave labo*
+SUPPLY_CHAIN_LAB,core,Rana Plaza
+SUPPLY_CHAIN_LAB,regulator,CBP
+SUPPLY_CHAIN_LAB,regulator,Customs and Border Protection
+SUPPLY_CHAIN_LAB,regulator,Department of Labor
+SUPPLY_CHAIN_LAB,regulator,Modern Slavery Act
+TOXIC_EMISS,core,oil spill*
+TOXIC_EMISS,core,chemical spill*
+TOXIC_EMISS,core,spill*
+TOXIC_EMISS,core,leak*
+TOXIC_EMISS,core,pollut*
+TOXIC_EMISS,core,contaminat*
+TOXIC_EMISS,core,toxic waste
+TOXIC_EMISS,core,hazardous waste
+TOXIC_EMISS,core,emission* violation*
+TOXIC_EMISS,core,air pollution
+TOXIC_EMISS,core,water pollution
+TOXIC_EMISS,core,sewage
+TOXIC_EMISS,core,discharg*
+TOXIC_EMISS,core,Clean Air Act
+TOXIC_EMISS,core,Clean Water Act
+TOXIC_EMISS,core,Superfund
+TOXIC_EMISS,core,gas leak*
+TOXIC_EMISS,core,methane leak*
+TOXIC_EMISS,core,wastewater
+TOXIC_EMISS,core,illegal dumping
+TOXIC_EMISS,core,toxic release
+TOXIC_EMISS,core,emissions cheat*
+TOXIC_EMISS,core,defeat device*
+TOXIC_EMISS,core,flaring
+TOXIC_EMISS,core,smog
+TOXIC_EMISS,regulator,EPA
+TOXIC_EMISS,regulator,Environmental Protection Agency
+TOXIC_EMISS,regulator,state environmental
+TOXIC_EMISS,regulator,Environment Agency
+TOXIC_EMISS,regulator,Ofwat
+TOXIC_EMISS,regulator,SEPA
+TOXIC_EMISS,regulator,Natural Resources Wales
+WATER_STRESS,core,water shortage*
+WATER_STRESS,core,water use
+WATER_STRESS,core,drought
+WATER_STRESS,core,groundwater
+WATER_STRESS,core,aquifer*
+WATER_STRESS,core,water rights
+WATER_STRESS,core,water scarcity
+WATER_STRESS,core,water extraction
+WATER_STRESS,core,water consumption
+WATER_STRESS,core,water permit*
+WATER_STRESS,core,depleting water
+WATER_STRESS,core,draining water
+WATER_STRESS,core,water usage
+WATER_STRESS,core,thirsty data center*
+WATER_STRESS,core,river levels
+WATER_STRESS,regulator,EPA
+WATER_STRESS,regulator,Environment Agency
+WATER_STRESS,regulator,Ofwat
+WATER_STRESS,regulator,water board
+ALL,event,fine*
+ALL,event,fined
+ALL,event,penalt*
+ALL,event,penalis*
+ALL,event,penaliz*
+ALL,event,sue*
+ALL,event,sued
+ALL,event,lawsuit*
+ALL,event,class action
+ALL,event,settle*
+ALL,event,charged
+ALL,event,charges
+ALL,event,indict*
+ALL,event,investigat*
+ALL,event,probe*
+ALL,event,subpoena*
+ALL,event,accus*
+ALL,event,alleg*
+ALL,event,violat*
+ALL,event,breach*
+ALL,event,cited
+ALL,event,citation*
+ALL,event,sanction*
+ALL,event,ordered to pay
+ALL,event,admit*
+ALL,event,guilty
+ALL,event,scandal*
+ALL,event,whistleblow*
+ALL,event,complaint*
+ALL,event,warning letter
+ALL,event,crackdown
+ALL,event,convicted
+ALL,event,jury
+ALL,event,verdict
+ALL,event,compensation
+ALL,event,damages
+ALL,severity_very_severe,killed
+ALL,severity_very_severe,deaths
+ALL,severity_very_severe,dead
+ALL,severity_very_severe,died
+ALL,severity_very_severe,fatal*
+ALL,severity_very_severe,explosion
+ALL,severity_very_severe,disaster*
+ALL,severity_very_severe,catastroph*
+ALL,severity_very_severe,collapse*
+ALL,severity_very_severe,criminal charge*
+ALL,severity_very_severe,indicted
+ALL,severity_very_severe,guilty plea
+ALL,severity_very_severe,pleads guilty
+ALL,severity_very_severe,billion
+ALL,severity_very_severe,record fine
+ALL,severity_very_severe,largest ever
+ALL,severity_very_severe,biggest ever
+ALL,severity_very_severe,massive
+ALL,severity_very_severe,mass
+ALL,severity_very_severe,poison*
+ALL,severity_very_severe,crisis
+ALL,severity_very_severe,evacuat*
+ALL,severity_very_severe,devastat*
+ALL,severity_severe,million
+ALL,severity_severe,major
+ALL,severity_severe,serious*
+ALL,severity_severe,injur*
+ALL,severity_severe,hospitali*
+ALL,severity_severe,class action
+ALL,severity_severe,nationwide
+ALL,severity_severe,widespread
+ALL,severity_severe,lawsuit*
+ALL,severity_severe,sued
+ALL,severity_severe,charged
+ALL,severity_severe,federal investigation
+ALL,severity_severe,criminal investigation
+ALL,severity_severe,probe
+ALL,severity_severe,recall*
+ALL,severity_severe,hefty
+ALL,severity_severe,significant
+ALL,severity_severe,multiple
+ALL,severity_moderate,alleg*
+ALL,severity_moderate,accus*
+ALL,severity_moderate,complaint*
+ALL,severity_moderate,concern*
+ALL,severity_moderate,critic*
+ALL,severity_moderate,petition*
+ALL,severity_moderate,dispute*
+ALL,severity_moderate,warning
+ALL,severity_moderate,protest*
+ALL,severity_moderate,question*
+ALL,severity_moderate,campaign*
+ALL,severity_moderate,calls for
+ALL,severity_moderate,claims
+ALL,exclude_title,price target
+ALL,exclude_title,shares of
+ALL,exclude_title,stock rating
+ALL,exclude_title,earnings call
+ALL,exclude_title,dividend
+ALL,exclude_title,analyst rating
+ALL,exclude_title,buy rating
+ALL,exclude_title,sell rating
+ALL,exclude_title,hold rating
+ALL,exclude_title,stock price
+ALL,exclude_title,52 week
+ALL,exclude_title,options activity
+ALL,exclude_title,institutional investor*
+ALL,exclude_title,holdings in
+ALL,exclude_title,position in
+ALL,exclude_title,stake in
+ALL,exclude_title,acquires new stake
+ALL,exclude_title,short interest
+ALL,exclude_title,trading volume
+ALL,exclude_title,stock forecast
+ALL,exclude_title,stocks to buy
+ALL,exclude_title,shares gap
+ALL,exclude_title,upgraded to
+ALL,exclude_title,downgraded to
+ALL,exclude_title,quarterly earnings
+ALL,exclude_title,earnings preview
+ALL,exclude_title,beats estimates
+ALL,exclude_title,misses estimates
+ALL,exclude_title,insider buying
+ALL,exclude_title,insider selling

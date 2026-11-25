@@ -1,0 +1,4 @@
+test,ias_coef_per_SD,ias_t,control,N,parents
+Next-12m market-adjusted return ~ IAS[t],-0.0026,-1.2,none,22227,4244
+Next-12m return ~ IAS[t] (+ past-12m return),-0.0021,-1.0,past-12m return,22100,4237
+Next-year operating ROA ~ IAS[t] (+ current ROA),0.003,4.7,current ROA 0.7721 (t=31.6),8257,1558

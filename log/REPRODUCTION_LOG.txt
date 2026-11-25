@@ -1,0 +1,217 @@
+============================================================================
+EZ-US REPRODUCTION LOG — MSCI July-2026 vintage ; LSEG returns 2013m1-2026m7
+All SE clustered by firm. Band = 10/7 = 1.4286 IAS pts. 2020 reported separately.
+============================================================================
+[SAMPLE] firm-year N(ΔIAS)=414,175 (2018-2025 excl 2020). Pricing N=43,296 (yr+ctry FE) / 43,196 (+sector). Returns issuers=7,574.
+
+[§6.1 REVISION FREQUENCY]  median IAS-obs gap=10 mo (mean 10.1) | zero severe-change share=97.6% | uncond R2(dIAS~dsev)<0.001
+
+[TABLE 1 SUMMARY STATS]  N / mean / sd / p25 / p50 / p75
+  IAS            469613 5.125 2.290 3.4 5.2 6.9
+  WAKIS          468690 4.817 1.076 4.2 4.8 5.5
+  Total contr    471871 6.412 14.164 0 1 5
+  Moderate       471871 0.883 2.125 0 0 1
+  Severe         471871 0.214 0.742 0 0 0
+  Very severe    471871 0.010 0.139 0 0 0
+  Minor/residual 471871 5.315 12.315 0 1 4
+  dIAS           414175 0.050 0.537 0 0 0
+  dWAKIS         412104 0.035 0.269 0 0 0
+
+[TABLE 2 SEVERITY-GRADED]  mean/yr | t0 β(t) | t+1 β(t)   (year FE)
+  Minor/residual 5.172 | -0.0021(-1.8) | -0.0037(-6.6)
+  Moderate       0.853 | -0.0054(-2.5) | +0.0041(+2.2)
+  Severe         0.205 | -0.0566(-7.7) | +0.0052(+1.0)
+  Very severe    0.011 | -0.3320(-6.8) | -0.0333(-1.2)
+  severe t0 = 4.3% of a band. ROBUSTNESS: severe t0 firmFE -0.0589(-7.8); minor t+1 firmFE -0.0006(-1.0); agg t+1 yearFE -0.0028(-5.6) firmFE +0.0010(+1.8).
+
+[TABLE 3 EARLY vs LATE WINDOWS]  horizon: early 2018-19 | late 2021-25 | full 2018-25 excl2020   (year FE, cluster firm)
+  Aggregate, t      +0.0084(+4.8)  | -0.0146(-12.7) | -0.0031(-2.8)
+  Aggregate, t+1    -0.0022(-3.2)  | -0.0034(-4.8)  | -0.0028(-5.6)
+  Severe,    t      -0.0721(-5.1)  | -0.0496(-5.9)  | -0.0566(-7.7)
+  Severe,    t+1    +0.0779(+6.8)  | -0.0276(-5.2)  | +0.0052(+1.0)
+  N (firm-years)    38,668         | 375,507        | 414,175
+  ROBUSTNESS (late, firms rated in 2018 only): aggregate t0 -0.0120(-9.4), N=102,880 -> not a universe-expansion artefact.
+  Reading: severe incorporated contemporaneously throughout; low-severity-dominated aggregate DEFERRED early (neg only at
+           t+1), CONTEMPORANEOUS from 2021 -> acceleration. Source: pipeline/02 (tab_earlylate.csv) & stata/t3_earlylate.do.
+
+[APPENDIX TABLE A2 — YEAR-BY-YEAR]  (underlies the Table 3 windows)  year: severe_t β(t) | agg_t β(t) | agg_t+1 β(t) | N
+  2018: -0.164(-2.1) | -0.000(-0.1) | -0.005(-2.2) | 18092
+  2019: -0.071(-4.9) | +0.010(+5.1) | -0.002(-2.5) | 20576
+  2020: -0.055(-9.0) | -0.006(-5.3) | -0.002(-4.0) | 66984
+  2021: -0.079(-2.9) | -0.037(-10.8)| +0.002(+0.9) | 72111
+  2022: -0.087(-5.5) | -0.014(-2.9) | -0.002(-0.9) | 74008
+  2023: +0.109(+6.0) | -0.006(-3.3) | -0.003(-2.0) | 75187
+  2024: -0.043(-2.6) | -0.016(-7.6) | -0.012(-6.3) | 76528
+  2025: -0.098(-7.6) | -0.012(-9.2) | -0.002(-1.5) | 77673
+  2026: -0.036(-1.5) | -0.066(-4.5) | n/a          | 78657
+
+[TABLE 4 OWN-SCORE SHARE]  spec: R2 / adjR2 / withinR2
+  Pooled OLS        0.412 / 0.412 / --
+  + Year FE         0.413 / 0.413 / 0.412(within-year)
+  + Firm FE         -- / -- / 0.375
+  + Firm&Year FE    -- / -- / 0.375
+  by-year R2: 2018 .523 ; 2019 .460 ; 2021 .269 ; 2022 .367 ; 2023 .380 ; 2024 .484 ; 2025 .506   (range .27-.52 ; non-own ~.59 upper bound)
+
+[§6.3 CHANNEL]  severe->dIAS -0.0577(-8.1) ; severe->dWAKIS -0.0454(-13.6) ; dIAS/dWAKIS slope 1.32(119.1) ; own-channel share ~100% ; amplification ~1.3x ; residual ~0
+
+[§6.4 PASS-THROUGH]  good 1.406(142.5) ; bad 1.161(50.6) ; H0 good=bad rejected p<0.001
+
+[§6.5 MONTHLY / FIG 2]  cumulative downgrade incidence @24m: early 47% / late 70% ; events early 2665 late 4994 ; cloglog Late coef 0.431(z12.6) HR 1.54
+
+[§6.6 LEAD]       moderate->same-issue severe: median 6 mo ; mean 10.1 ; %>=6mo 52% ; n 13338
+[§6.6 RECLASS]    at severe onset same-issue moderate: falls 56% / unchanged 25% / rises 19% ; n 22438
+[§6.6 CROSS-ISSUE] same-issue +0.01549(40.3) ; different-issue +0.00013(6.2)  [firm FE]
+[APPENDIX A4 DOWNGRADE-HORIZON] sustained-low->downgrade: 12m -0.009(-5.8) ; 24m -0.023(-12.7)  [firm FE + IAS level]
+
+[TABLE 5 PRICING]  fwd12w ~ own + nonown  [yr+ctry+sector FE]
+  own -0.006(-1.5) ; nonown -0.003(-1.4) ; joint F=2.04 p=0.13 ; N=43196 ; bhat=1.12
+  (yr+ctry FE only: own -0.0066(-1.77) ; nonown -0.0026(-1.07) ; F=2.05 p=0.128 ; N=43296)
+
+[TABLE 6 TWO-EVENT]  6-mo fwd CAR (mkt-adj) | N | FE coef(t)
+  no event        -0.0016 | 780460 | --
+  severe onset    -0.0289 | 1276   | -0.0123(-2.0)
+  downgrade all   +0.0192 | 4169   | --
+  dg controv-link -0.0357 | 189    | -0.0130(-0.8)
+  dg not linked   +0.0218 | 3980   | +0.0272(+0.7)
+
+[LITERATURE-CITED] Berg/Cornaggia/Foroni/Tripoli 2026: implemented downgrades -2.8%/12m ; suppressed none.
+============================================================================
+
+============================================================================
+[DRAFT REVISIONS — v12/v13 sync; matches Summer_Paper_REVISED_v13.docx]
+  * Abstract rewritten as a single flowing paragraph (supervisor style); "we" voice throughout (I/My -> we/our).
+  * New Table 3 = early-vs-late incorporation-timing windows (above). Former year-by-year -> Appendix Table A2.
+  * Appendix tables lettered A1-A4 (var defs / year-by-year / monthly hazard / downgrade-horizon); fixes prior 7/8/9 numbering.
+  * Added theory: timeliness-stability trade-off (Altman-Rijken 2004/2006; Loffler 2004/2005); Libby (1981) predictive-
+    validity framework; point-in-time vintage cite (Berg-Fabisik-Sautner 2021).
+  * +6 references: altmanrijken2006, bergfabisiksautner2021, galemagerritsen2025, glossner2021, libby1981, loffler2004.
+  * LaTeX sections/*.tex + main_standalone.tex recompiled: 26 pp, 0 errors. Pipeline 02 & stata/t3_earlylate.do reproduce Table 3.
+============================================================================
+
+[EXTERNAL CLOCK -- Section 8, eq.9 (identification core; data pending)]
+  pipeline/09_external_clock.py: scraper (GDELT DOC 2.0; Violation Tracker) + discrete-time cloglog hazard
+  of the rating update vs provider-independent first-awareness date; enforcement-date placebo.
+  stata/t7_externalclock.do mirrors it. Offline synthetic estimator check PASSES (recovers planted
+  severity gradient). Live scrape requires network to api.gdeltproject.org & violationtracker.goodjobsfirst.org;
+  RepRisk (licensed) preferred when available. See docs/EXTERNAL_CLOCK_PLAN.md.
+
+================================================================================
+[2026-10-03] CANONICAL re-run (v26) — bitemporal valid-time + ultimate-parent clustering
+================================================================================
+Construction fixes now baked into pipeline/02_table2_table3_severity.py:
+  * VALID-TIME controversy counts: a field counts in year t iff START_DATE <= Dec31(t)
+    <= END_DATE (respects the Aug-2020 methodology reissue). Corrects an undercount in
+    the prior 'latest START_DATE' as-of. IAS outcome and TOTAL count are unaffected.
+  * Standard errors clustered by PARENT_ULTIMATE_ISSUERID (subsidiaries inherit the
+    parent's rating; 76,487 rated ids -> 29,119 economic groups). Parents-only
+    (140,474 firm-years) = robustness.
+  * BINDING treatment (# Key Issues whose highest-severity controversy is at level s),
+    matching MSCI's single-highest-deduction rule.
+
+SAMPLE: 401,885 firm-years | 76,487 issuers | 29,119 ultimate-parent groups | 179 countries (US 38.0%).
+
+TABLE 2 (parent-clustered):  level | t0 beta(t) | t+1 beta(t) | parents-only t0 | binding t0
+  Minor/residual  -0.0034(-1.1)  -0.0062(-3.3)  -0.0033(-1.5)        n/a
+  Moderate        -0.0118(-4.4)  +0.0064(+1.6)  -0.0133(-5.3)   -0.0311(-3.6)
+  Severe          -0.0581(-4.2)  +0.0121(+0.7)  -0.0602(-5.6)   -0.0880(-4.0)
+  Very severe     -0.2997(-3.4)  -0.0288(-0.8)  -0.2408(-3.2)   -0.3236(-3.3)
+  => monotone & significant from moderate up; low-severity one-year LAG holds (minor t+1 -0.006, t-3.3).
+
+TABLE 3 (early/late, parent-clustered):  agg_t0 early +0.0057(+1.6) late -0.0147(-5.2) full -0.0071(-2.5);
+  agg_t1 -0.0047/-0.0035/-0.0039; sev_t0 -0.0715/-0.0533/-0.0581; sev_t1 +0.0937/-0.0173/+0.0121.
+  N: 32,480 / 369,405 / 401,885; clusters 9,877 / 29,119 / 29,119.
+  robustness late ∩ rated-2018: agg_t0 -0.0148(-4.6), N=250,765.
+
+OWN-SHARE (Table 4): R2 pooled 40.1% / +yearFE 40.2% / within-firm 36.1%; WAKIS->IAS slope 1.31.
+OWN-CHANNEL (6.3): severe->dWAKIS -0.050; -0.050 x 1.31 ~ -0.066 vs total severe -0.058.
+PASS-THROUGH (6.4): positive 1.39, negative 1.15 (diff p<0.001).
+NO-CHANGE in severe count: 98.0%. 
+
+NOTE: 02 is re-run and verified against the draft (v26). Scripts 01,03,05,06,07,08 require the
+same ultimate-parent clustering swap (and 01 the valid-time severity panel) to reproduce every
+printed t-stat; 04 (monthly incidence) and the onset/issue-based results are unaffected by the
+valid-time level correction. See CHANGELOG in README.md.
+
+[2026-10-29] v33 robustness — pipeline/10_robustness_firstcoverage.py (run after 02; July-2026 extract; Aug-2026 issuer reference)
+[A] canonical N=401,885; first-covered firm-years=14,389 {2018: 362, 2019: 13841, 2021: 58, 2022: 26, 2023: 48, 2024: 28, 2025: 26}
+[B] Table 2 t0 (one severity per regression):
+    c_minor  all {'d_c_minor': (-0.0034, -1.1)} | excl first {'d_c_minor': (-0.0114, -3.8)}
+    c_mod    all {'d_c_mod': (-0.0118, -4.4)} | excl first {'d_c_mod': (-0.0091, -2.5)}
+    c_sev    all {'d_c_sev': (-0.0581, -4.2)} | excl first {'d_c_sev': (-0.0551, -3.5)}
+    c_vs     all {'d_c_vs': (-0.2997, -3.4)} | excl first {'d_c_vs': (-0.3022, -3.3)}
+[B] Table 3:
+    early all N=32,480 agg_t0 {'d_tot': (0.0057, 1.6)} agg_t1 {'d_tot': (-0.0047, -1.9)} sev_t0 {'d_c_sev': (-0.0715, -2.5)} sev_t1 {'d_c_sev': (0.0937, 2.2)}
+    early excl N=18,277 agg_t0 {'d_tot': (-0.0062, -0.9)} agg_t1 {'d_tot': (-0.0032, -0.4)} sev_t0 {'d_c_sev': (-0.0729, -2.0)} sev_t1 {'d_c_sev': (0.0283, 1.1)}
+    late all N=369,405 agg_t0 {'d_tot': (-0.0147, -5.2)} agg_t1 {'d_tot': (-0.0035, -1.8)} sev_t0 {'d_c_sev': (-0.0533, -3.2)} sev_t1 {'d_c_sev': (-0.0173, -1.2)}
+    late excl N=369,219 agg_t0 {'d_tot': (-0.0149, -5.3)} agg_t1 {'d_tot': (-0.0035, -1.8)} sev_t0 {'d_c_sev': (-0.054, -3.3)} sev_t1 {'d_c_sev': (-0.0171, -1.2)}
+[C] early-window lag:
+    all                      N=32,480 agg t0 {'d_tot': (0.0057, 1.6)} t+1 {'d_tot': (-0.0047, -1.9)} | resid t+1 {'d_c_minor': (-0.0115, -4.2)}
+    TOTAL in both years      N=28,027 agg t0 {'d_tot': (0.0, 0.0)} t+1 {'d_tot': (-0.0093, -2.0)} | resid t+1 {'d_c_minor': (-0.0164, -3.9)}
+    + excl severity-first    N=15,342 agg t0 {'d_tot': (-0.0058, -0.8)} t+1 {'d_tot': (-0.0035, -0.5)} | resid t+1 {'d_c_minor': (-0.005, -0.8)}
+[D] severity x Late (joint):
+    all parent-cl {'x_c_mod': (-0.0048, -0.9), 'xl_c_mod': (-0.0016, -0.2), 'x_c_sev': (-0.0464, -1.7), 'xl_c_sev': (-0.0205, -0.6), 'x_c_vs': (0.0062, 0.1), 'xl_c_vs': (-0.2665, -2.1), 'x_c_minor': (0.0084, 2.5), 'xl_c_minor': (-0.0241, -6.2)}
+    all firm-cl   {'x_c_mod': (-0.0048, -1.6), 'xl_c_mod': (-0.0016, -0.5), 'x_c_sev': (-0.0464, -4.0), 'xl_c_sev': (-0.0205, -1.5), 'x_c_vs': (0.0062, 0.1), 'xl_c_vs': (-0.2665, -2.8), 'x_c_minor': (0.0084, 4.1), 'xl_c_minor': (-0.0241, -10.2)}
+    excl first parent-cl {'x_c_mod': (0.0125, 1.0), 'xl_c_mod': (-0.0191, -1.5), 'x_c_sev': (-0.1037, -2.4), 'xl_c_sev': (0.036, 0.7), 'x_c_vs': (-0.0062, -0.0), 'xl_c_vs': (-0.2534, -1.8), 'x_c_minor': (-0.006, -0.8), 'xl_c_minor': (-0.0099, -1.4)}
+    excl first firm-cl   {'x_c_mod': (0.0125, 1.7), 'xl_c_mod': (-0.0191, -2.4), 'x_c_sev': (-0.1037, -3.8), 'xl_c_sev': (0.036, 1.3), 'x_c_vs': (-0.0062, -0.1), 'xl_c_vs': (-0.2534, -2.6), 'x_c_minor': (-0.006, -1.6), 'xl_c_minor': (-0.0099, -2.6)}
+[E] Section 6.5:
+    as in paper                  early N=2,665 cum24=0.47 | late N=4,994 cum24=0.701 | cloglog late (np.float64(0.431), np.float64(2.4), 1.54)
+    excl first 12m of coverage   early N=398 cum24=0.606 | late N=4,810 cum24=0.702 | cloglog late (np.float64(0.13), np.float64(1.4), 1.14)
+
+[2026-10-29] v35 — 06_crossissue_downgradehorizon.py re-run (parent-clustered)
+[DOWNGRADE-HORIZON 12m] sustained-low -> downgrade (firm FE+IAS): -0.0091 (t=-2.2)
+[DOWNGRADE-HORIZON 24m] sustained-low -> downgrade (firm FE+IAS): -0.0232 (t=-5.1)
+[CROSS-ISSUE] {'cross6': (0.00013, 1.43), 'same6': (0.01549, 7.1)}
+[6.5 HAZARD cloglog, 10] late coef 0.431 | z parent 2.4, firm 11.4, none 12.6 | HR 1.54 | events early 2665 late 4994
+
+============================================================================
+[v36] FULL PIPELINE ASSEMBLED — consequences/, robustness/, external_clock/, audit/
+============================================================================
+[EXTERNAL CLOCK — automated keyword screen]  GDELT 2.0, US+GB, match_on=body, 0 to -3y window, 718-term dict (K0), seed 7
+  funnel: 14,207 onsets -> 2,399 auto-matched -> 727 screened -> 239 selected -> 223 verified
+  automated implied lag: median ~135 days across 2,399 (noisy; used for placebo + representativeness only)
+  placebo (K3): 1y match share true 16.7% vs placebo 16.8%; within 90d 5.1% vs 3.9% (t=2.6)
+[EXTERNAL CLOCK — hand-verified, 223 US/UK onsets, lag_v3.py -> audit/]  = the manuscript's reported lag
+  reweighted to severity mix of all 14,207 onsets (A4_reweighted_lag.csv)
+[TABLE 9 PRICING — audited dates, V1v3]  CAR[-1,+1] audited news = -2.04% (t=-2.53)
+[TABLE 10 FUND FLOWS — index vs other ESG, section8 + a1]  index funds q+1 = -0.0079 (t=-13.8)
+[TABLE 11 VOLUME/LIQUIDITY — section8_extra]  downgrade log turn [0,5] = +3.3% (t=3.05)
+[APPENDIX G IMPLIED dWAKIS — a5]  see robustness/results/A5_implied.csv
+
+[v37] SECTION 4 DATA FACTS VERIFIED (robustness/verify_data_facts.py)
+  2020 re-issue: closed 2020-08-28 = 748,944 rec / 50,158 iss ; opened 2020-11-10 = 134,326 / 14,299
+  in force: end-2019 = 910,230 rec / 62,816 iss  ->  end-2020 = 325,560 / 15,347 (≈ -2/3)
+  coverage-start: START_DATE=2019-07-01 = 920,424 rec / 62,716 iss
+  Table 1 WAKIS N: IAS-without-WAKIS a few firm-years/yr -> WAKIS 401,872 ; dWAKIS 401,835 ; others 401,885
+
+[v38] DOWNGRADE DRIFT RECONCILIATION (consequences/downgrade_drift_eventstudy.py -> Table H3)
+  event-time CAR (balanced, N=4,897): before(-6..-1) -2.5% t=-7.2 ; month0 -0.5% t=-3.3 ; after(+1..+6) -2.2% t=-6.6
+  => no abnormal return at the downgrade; drift symmetric about the event (not a reaction to the rating)
+  not a washing-out artifact: excl batch dates -2.24% ; excl 2019-2020 -2.17% ; 2021+ -1.79% ; <=2018 -2.73%
+  past-6m return control: downgrade coef -1.28% t=-3.9 (not momentum)
+
+[v39] PILLAR SPLIT + FORWARD/BACKWARD (pillar_forward_backward/pillar_forward_ownership.py)
+  Table 8 incorporation (binding, 2020-excl, N=401,885): severe E -0.117(-1.5) S -0.073(-2.7) G -0.128(-2.4);
+    very-severe E -0.203(-0.9) S -0.373(-4.9) G -0.237(-0.5); freq severe+ E13.2% S70.7% G16.1%
+  Forward-looking score->future controversy: E +0.0004(+4.5) S -0.0003(-1.3) G -0.0013(-11.6); persistence 0.42-0.74
+  Ownership weight: all ESG-named 0.21% of shares; index-tracking ESG 0.03%
+
+[v40] DOES THE RATING PREDICT THE FUTURE? (score_predicts_returns_fundamentals.py -> Table 13)
+  next-12m market-adj return ~ IAS[t]: +0.004 per SD (t=0.3) [+past-ret control: t=0.3]  N=29,680 / 4,245 parents
+  next-year operating ROA ~ IAS[t] (+current ROA 0.74,t=28): +0.0024 per SD (t=4.0)  N=10,947 / 1,558 parents
+  => no return prediction; tiny, unpriced ROA signal (firm-quality correlation)
+
+[v41] TABLE 13 RE-ESTIMATED ON CANONICAL WINDOW (score_predicts_returns_fundamentals.py)
+  base year t restricted to 2018-2025 excl. 2020 (= Tables 2/5 sample), forward outcomes 2019-2025
+  next-12m market-adj return ~ IAS[t]: −0.003 per SD (t=−1.2) [+past-ret control: −0.003, t=−1.0]  N=22,227 / 4,244 parents
+  (next-12m return winsorised at 0.5/99.5, matching the Appendix H return tests)
+  next-year operating ROA ~ IAS[t] (+current ROA 0.77,t=32): +0.003 per SD (t=4.7)  N=8,257 / 1,558 parents ; mean next-yr ROA 10.0%
+  => conclusion unchanged vs v40 (no return prediction; small unpriced ROA signal); draft §7.5/Table 13 + abstract updated
+
+[v42] DOWNGRADE FOLLOW-UP TESTS (downgrade_followup/H3_build_and_run.py) — Appendix H
+  built kit from HIST_SUMMARY_SCORES (IVA_COMPANY_RATING -> band; INDUSTRY_ADJUSTED_SCORE) + master-ref ISIN link + monthly_total_returns
+  downgrades: 19,097 (band falls vs previous letter)
+  TEST (a) month-0 contrast: market-adj -0.32pp (t=-2.07, N=4305); momentum-matched -0.35pp (t=-2.24); US four-factor -0.38pp (t=-1.11); ultimate-parent -0.19pp (t=-1.5)
+  TEST (b) paths (before/month0/after): market-adj -1.70/-0.60/-1.57; momentum-matched -1.51/-0.59/-1.36; four-factor(US) -2.76/-0.84/-2.75
+  ROBUSTNESS 6m drift: -1.55%(mkt)/-1.37%(mom) baseline; -1.32/-1.18 excl 2019; unchanged excl re-rating dates; holds 2021+ and pre-2019
+  => no detectable short-window reaction at the change; symmetric drift is not momentum/backfill artifact (survives both)
+[v43] added F1_window_robustness.csv (median logging lag by screening window: 65/71/71/76/80 days for 0-60/0-90/0-120/0-180/no-cap) - lag is robust to the clock window (comment 937).

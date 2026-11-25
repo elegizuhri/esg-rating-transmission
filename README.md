@@ -4,7 +4,7 @@ Replication code for *Information Transmission in ESG Ratings: Evidence from MSC
 
 The whole pipeline — data acquisition, cleaning, variable construction, and every table, figure, and result — runs from one Google Colab notebook.
 
-📄 **Paper:** [Not available yet]
+📄 **Paper:** _Not yet available._
 
 This repository contains **code only** — not the manuscript. The paper is distributed separately at the link above.
 
@@ -12,18 +12,22 @@ This repository contains **code only** — not the manuscript. The paper is dist
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/elegizuhri/esg-rating-transmission/blob/main/pipeline_colab.ipynb)
 
-> `https://colab.research.google.com/github/elegizuhri/esg-rating-transmission/blob/main/pipeline_colab.ipynb`
-
-Or, in Colab: **File → Open notebook → GitHub tab → paste the repo URL → open `pipeline_colab.ipynb`**.
+Or, in Colab: **File → Open notebook → GitHub tab → paste this repo's URL → open `pipeline_colab.ipynb`**.
 
 ## What's inside
 
 | Path | What it is |
 |---|---|
 | `pipeline_colab.ipynb` | **Start here.** The full annotated pipeline, Section 0 → 4, every code cell commented. |
-| `replication/` | The individual analysis scripts the notebook embeds (run directly via `replication/pipeline/run_all.sh` if you prefer). |
-| `replication/docs/CONSTRUCTION_DOCUMENTATION.md` | Variable dictionary and the exact expected value for every table. |
-| `replication/F1_daily_CAR_61_125.py` | Daily four-factor CAR over [+61, +125] — the §7.2 reconciliation (needs the CRSP daily file). |
+| `pipeline/` | Core build + main tables/figures. Run them in order, or all at once via `pipeline/run_all.sh`. |
+| `consequences/` | Ownership reallocation, liquidity, and the downgrade-drift event study. |
+| `external_clock/` | The public-report (GDELT) clock: funnel, representativeness, and reweighted lag. |
+| `pillar_forward_backward/` | Pillar-level (E/S/G) incorporation and the forward-looking score tests. |
+| `robustness/` | Backfill, distance-to-threshold, and methodology-implied robustness checks. |
+| `audit/` | Hand-verified lag on the 223 verified onsets (the manuscript clock). |
+| `downgrade_followup/F1_daily_CAR_61_125.py` | Daily four-factor CAR over [+61, +125] — the §7.2 reconciliation (needs the CRSP daily file). |
+| `docs/CONSTRUCTION_DOCUMENTATION.md` | Variable dictionary and the exact expected value for every table. |
+| `MANIFEST.md` | One-line description of every script. |
 | `requirements.txt` | Python dependencies (the notebook installs these for you in Colab). |
 
 ## How the notebook is organised
@@ -36,7 +40,7 @@ Or, in Colab: **File → Open notebook → GitHub tab → paste the repo URL →
 
 ## ⚠️ Data access
 
-The four raw sources (MSCI ESG, GDELT, WRDS, Refinitiv/LSEG) are **licensed**. This repo contains **code only** — no raw data. Put the licensed files in your own Google Drive (Section 0 of the notebook shows the expected filenames) and supply your own WRDS login and Refinitiv app key. The `.gitignore` is set up to keep data and credentials out of the repository. Sections 2–4 run entirely on the files the Section 1 cells produce.
+The four raw sources (MSCI ESG, GDELT, WRDS, Refinitiv/LSEG) are **licensed**. This repo contains **code only** — no raw data. Put the licensed files in your own Google Drive (Section 0 of the notebook shows the expected filenames) and supply your own WRDS login and Refinitiv app key. The `.gitignore` keeps data and credentials out of the repository. Sections 2–4 run entirely on the files the Section 1 cells produce.
 
 ## Citation
 

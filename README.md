@@ -4,7 +4,7 @@ Replication code for *Information Transmission in ESG Ratings: Evidence from MSC
 
 The whole pipeline — data acquisition, cleaning, variable construction, and every table, figure, and result — runs from one Google Colab notebook.
 
-📄 **Paper:** [add the SSRN / preprint / journal link here]
+📄 **Paper:** [not yet available - will be updated soon]
 
 This repository contains **code only** — not the manuscript. The paper is distributed separately at the link above.
 
